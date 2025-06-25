@@ -17,13 +17,13 @@ services:
            - nifi_provenance_repository:/opt/nifi/nifi-current/provenance_repository
            - nifi_nar:/opt/nifi/nifi-current/nar_extensions
            # Diretório para arquivos JDBC paraconexões com bancos de dados
-           - ./nifi/jdbc:/opt/nifi/nifi-current/jdbc
+           - ./libs/jdbc:/opt/nifi/nifi-current/jdbc
            # Diretório com arquivo que contém as bibliotecas em Python
-           - ./nifi/python_requeriments:/opt/nifi/nifi-current/python_requeriments
+           - ./libs/python_requeriments:/opt/nifi/nifi-current/python_requeriments
            # Diretório de scripts Python
-           - ./nifi/python_scripts:/opt/nifi/nifi-current/python_scripts
+           - ./libs/python_scripts:/opt/nifi/nifi-current/python_scripts
            # Diretório dos PROCESSORs criados em Python
-           - ./nifi/python_extensions:/opt/nifi/nifi-current/python_extensions
+           - ./libs/python_extensions:/opt/nifi/nifi-current/python_extensions
            # Diretório para manipulação de arquivos em geral
            - /mnt/staging:/opt/nifi/nifi-current/files
            # T0 - /scratch
