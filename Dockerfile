@@ -17,9 +17,9 @@ RUN /usr/sbin/addgroup --gid 15052 lsst_dp2
 RUN /usr/sbin/addgroup --gid 15043 lsst_dr1
 RUN /usr/sbin/addgroup --gid 15044 lsst_dr2
 
-COPY nifi/lib /opt/nifi/nifi-current/lib
-COPY nifi/python_extensions /opt/nifi/nifi-current/python_extensions
-COPY nifi/python_requeriments/requirements.txt /opt/nifi/nifi-current/python_requeriments
+COPY libs/lib /opt/nifi/nifi-current/lib
+COPY libs/python_extensions /opt/nifi/nifi-current/python_extensions
+COPY libs/python_requeriments/requirements.txt /opt/nifi/nifi-current/python_requeriments
 
 RUN pip install --no-cache-dir -r /opt/nifi/nifi-current/python_requeriments/requirements.txt
 
