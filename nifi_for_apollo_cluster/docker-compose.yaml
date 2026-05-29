@@ -1,0 +1,55 @@
+services:
+    nifi-apl28:
+        hostname: nifi-apl28
+        container_name: nifi-apl28-container
+        build:
+            context: .
+        #image: apache/nifi:2.0.0-M4
+        ports:
+             - "8445:8445"
+        volumes:
+           - nifi_conf:/opt/nifi/nifi-current/conf
+           - nifi_state:/opt/nifi/nifi-current/state
+           - nifi_logs:/opt/nifi/nifi-current/logs
+           - nifi_database_repository:/opt/nifi/nifi-current/database_repository
+           - nifi_flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+           - nifi_content_repository:/opt/nifi/nifi-current/content_repository
+           - nifi_provenance_repository:/opt/nifi/nifi-current/provenance_repository
+           - ./nifi/files:/opt/nifi/nifi-current/files
+           # Diretório para arquivos JDBC paraconexões com bancos de dados
+           - ./nifi/jdbc:/opt/nifi/nifi-current/jdbc
+           # Diretório com arquivo que contém as bibliotecas em Python
+           - ./nifi/python_requeriments:/opt/nifi/nifi-current/python_requeriments
+           # Diretório de scripts Python
+           - ./nifi/python_scripts:/opt/nifi/nifi-current/python_scripts
+           # Diretório dos PROCESSORs criados em Python
+           - ./nifi/python_extensions:/opt/nifi/nifi-current/python_extensions
+           # Diretório para manipulação de arquivos em geral
+           - /mnt/staging:/opt/nifi/nifi-current/files
+           # T1 - /data
+           - /data:/data
+           # T0 - /scratch
+           - /scratch:/scratch
+           # DATA STAGING
+           - /mnt/staging:/opt/nifi/nifi-current/staging
+           # Slurm
+           - /opt/apache-nifi/slurm-client/slurm.conf:/etc/slurm/slurm.conf  
+           - /etc/munge:/etc/munge
+        environment:
+            - NIFI_WEB_HTTPS_HOST=0.0.0.0
+            - NIFI_WEB_HTTPS_PORT=8445
+            - NIFI_WEB_PROXY_HOST=localhost:8445
+            - NIFI_CLUSTER_IS_NODE=false
+            - SINGLE_USER_CREDENTIALS_USERNAME=${SINGLE_USER_CREDENTIALS_USERNAME}
+            - SINGLE_USER_CREDENTIALS_PASSWORD=${SINGLE_USER_CREDENTIALS_PASSWORD}
+            - NIFI_JVM_HEAP_INIT=4g
+            - NIFI_JVM_HEAP_MAX=8g
+            - TZ=America/Sao_Paulo
+volumes:
+    nifi_conf:
+    nifi_state:
+    nifi_logs:
+    nifi_database_repository:
+    nifi_flowfile_repository:
+    nifi_content_repository:
+    nifi_provenance_repository:

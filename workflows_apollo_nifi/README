@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------------
+THIS NOTICE APPLIES TO ALL WORKFLOWS CONTAINED IN THIS DIRECTORY
+---------------------------------------------------------------------------------------
+
+```
+Apache NiFi – Versioned Workflows Repository
+
+This directory is intended for workflows versioned through Apache NiFi.
+```
+
+## WHY VERSION WORKFLOWS?
+
+Versioning workflows in NiFi provides a safer and more organized way to
+manage dataflows.
+
+Main benefits include:
+
+* Track workflow changes over time
+* Maintain version history for rollback if necessary
+* Improve collaboration between users and teams
+* Increase workflow traceability and reproducibility
+* Prevent accidental loss of validated configurations
+
+## DIRECTORY PURPOSE
+
+This directory is dedicated to storing workflows versioned directly from
+Apache NiFi.
+
+Only version-controlled workflows should be committed here.
+
+## HOW TO VERSION A WORKFLOW
+
+1. Right-click the Processor Group that contains the workflow you want
+   to version.
+
+2. Select one of the following options:
+
+   Version -> Start Version Control
+
+   or, for already versioned workflows:
+
+   Commit Local Changes
+
+3. In the "Save Flow Version" window:
+
+   * In the "Bucket" field, select this directory.
+   * Fill in the remaining fields as needed.
+   * Save/commit the workflow version.
+
+## NOTES
+
+* Prefer committing validated and tested workflows only.
+* Use meaningful commit messages whenever possible.
+* Avoid versioning temporary or experimental flows unless necessary.
