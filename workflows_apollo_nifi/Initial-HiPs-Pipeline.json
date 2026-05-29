@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1780066710895,
+    "description" : "",
+    "identifier" : "Initial-HiPs-Pipeline",
+    "lastModifiedTimestamp" : 1780066710895,
+    "name" : "Initial HiPs Pipeline",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
