@@ -420,8 +420,8 @@
       "identifier" : "c567fa19-cf46-3de0-86a8-a490c96fbe23",
       "label" : "Notification Error",
       "position" : {
-        "x" : -1344.0,
-        "y" : 400.0
+        "x" : -1352.0,
+        "y" : 216.0
       },
       "style" : {
         "background-color" : "#673737",
@@ -760,8 +760,8 @@
       "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1456.0,
-        "y" : 1448.0
+        "x" : -1464.0,
+        "y" : 1264.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
@@ -1255,8 +1255,8 @@
       "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1456.0,
-        "y" : 960.0
+        "x" : -1464.0,
+        "y" : 776.0
       },
       "properties" : {
         "job_name" : "${filename:replaceAll('-[0-9]+\\\\.err$','')}",
@@ -1344,8 +1344,8 @@
       "name" : "FetchFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1456.0,
-        "y" : 704.0
+        "x" : -1464.0,
+        "y" : 520.0
       },
       "properties" : {
         "Move Conflict Strategy" : "Fail",
@@ -2278,8 +2278,8 @@
       "name" : "RouteOnAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1464.0,
-        "y" : 1208.0
+        "x" : -1472.0,
+        "y" : 1024.0
       },
       "properties" : {
         "Routing Strategy" : "Route to Property name",
@@ -2803,8 +2803,8 @@
       "name" : "ListFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1456.0,
-        "y" : 456.0
+        "x" : -1464.0,
+        "y" : 272.0
       },
       "properties" : {
         "Minimum File Age" : "0 sec",
