@@ -559,12 +559,12 @@
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
-        "Message" : "=========================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - COMPLETED\n=========================================================\n\nJob ID:\t\t\t\t\t${job_id}\nJob Name:\t\t\t\t${job_name}\n\nState:\t\t\t\t\t${state}\nJob Execution Time:\t\t${elapsed}\nJob End Time:\t\t\t${end_time}\n\nCPUs:\t\t\t\t\t${alloc_cpus}\nMax Mem Used:\t\t\t${max_rss}\n\nLog Files Path:\t\t\t${log_files}\nErro File Size:\t\t\t${stderr_size}\n=========================================================\n\nEste é um e-mail automático.",
+        "Message" : "=========================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - COMPLETED\n=========================================================\n\nJob ID:\t\t\t\t\t${job_id}\nJob Name:\t\t\t\t${job_name}\n\nState:\t\t\t\t\t${state}\nJob Execution Time:\t\t${elapsed}\nJob End Time:\t\t\t${end_time}\n\nInputdir:\t\t\t\t${input_dir}\nOutputdir:\t\t\t\t${out_dir}\n\nLog Files Path:\t\t\t${log_files}\nErro File Size:\t\t\t${stderr_size}\n=========================================================\n\nEste é um e-mail automático.",
         "Attach File" : "false",
         "input-character-set" : "UTF-8",
         "SMTP Port" : "25",
         "SMTP Auth" : "false",
-        "From" : "infra@linea.org.br",
+        "From" : "nifi-notifier@linea.org.br",
         "Include All Attributes In Message" : "false",
         "SMTP Hostname" : "mx4.linea.org.br",
         "Subject" : "[IDAC-BR] NiFi | COMPLETED [JOB ${job_id}] - [HIPS CATALOG-GEN PIPELINE FOR #{data_release}]",
@@ -760,17 +760,17 @@
       "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1480.0,
+        "x" : -1456.0,
         "y" : 1448.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
-        "Message" : "=====================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - ERROR\n=====================================================\n\nJob ID: \t\t\t\t${job_id}\nJob Name: \t\t\t\t${job_name}\n\nState: \t\t\t\t\t${state}\n\nEnd Time: \t\t\t\t${end_time}\n\nPath to the error file:\n${stderr_file}\n\n=====================================================\n\n\nEste é um e-mail automático.",
+        "Message" : "=====================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - ERROR\n=====================================================\n\nJob ID: \t\t\t\t${job_id}\nJob Name: \t\t\t\t${job_name}\n\nPath to the error file:\n${stderr_file}\n\n=====================================================\n\n\nEste é um e-mail automático.",
         "Attach File" : "true",
         "input-character-set" : "UTF-8",
         "SMTP Port" : "25",
         "SMTP Auth" : "false",
-        "From" : "nubia.garcia@linea.org.br",
+        "From" : "nifi-notifier@linea.org.br",
         "Include All Attributes In Message" : "false",
         "SMTP Hostname" : "mx4.linea.org.br",
         "Subject" : "[IDAC-BR] NiFi | EXECUTION ERROR [JOB ${job_id}] - [HIPS CATALOG-GEN PIPELINE FOR #{data_release}]",
@@ -1059,7 +1059,7 @@
         "input-character-set" : "UTF-8",
         "SMTP Port" : "25",
         "SMTP Auth" : "false",
-        "From" : "infra@linea.org.br",
+        "From" : "nifi-notifier@linea.org.br",
         "Include All Attributes In Message" : "false",
         "SMTP Hostname" : "mx4.linea.org.br",
         "Subject" : "[IDAC-BR] NiFi | EXECUTION ERROR [JOB ${job_id}] - [HIPS CATALOG-GEN PIPELINE FOR #{data_release}]",
@@ -1259,8 +1259,11 @@
         "y" : 960.0
       },
       "properties" : {
+        "job_name" : "${filename:replaceAll('-[0-9]+\\\\.err$','')}",
         "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100"
+        "canonical-value-lookup-cache-size" : "100",
+        "job_id" : "${filename:replaceAll('.*-([0-9]+)\\\\.err','$1')}",
+        "stderr_file" : "${absolute.path}${filename}"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -1268,6 +1271,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "job_name" : {
+          "displayName" : "job_name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "job_name",
           "sensitive" : false
         },
         "Store State" : {
@@ -1282,6 +1292,20 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "job_id" : {
+          "displayName" : "job_id",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "job_id",
+          "sensitive" : false
+        },
+        "stderr_file" : {
+          "displayName" : "stderr_file",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "stderr_file",
           "sensitive" : false
         },
         "Stateful Variables Initial Value" : {
@@ -1500,9 +1524,11 @@
         "elapsed" : "$.elapsed",
         "log_files" : "$.log_files",
         "job_name" : "$.job_name",
+        "out_dir" : "$.out_dir",
         "job_id" : "$.job_id",
         "stderr_file" : "$.stderr_file",
-        "state" : "$.state"
+        "state" : "$.state",
+        "input_dir" : "$.input_dir"
       },
       "propertyDescriptors" : {
         "Destination" : {
@@ -1589,6 +1615,13 @@
           "name" : "job_name",
           "sensitive" : false
         },
+        "out_dir" : {
+          "displayName" : "out_dir",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "out_dir",
+          "sensitive" : false
+        },
         "job_id" : {
           "displayName" : "job_id",
           "dynamic" : true,
@@ -1608,6 +1641,13 @@
           "dynamic" : true,
           "identifiesControllerService" : false,
           "name" : "state",
+          "sensitive" : false
+        },
+        "input_dir" : {
+          "displayName" : "input_dir",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "input_dir",
           "sensitive" : false
         }
       },
@@ -1644,12 +1684,12 @@
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
-        "Message" : "=========================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - SUBMITTED\n=========================================================\n\nThe HiPS Catalog-gen pipeline for #{data_release} \nhas been submitted and started running.\n\nJob ID:\t\t\t${job_id}\nJob Name:\t\t${job_name}\nPartition:\t\t${partition}\nNodelist:\t\t${nodelist}\n\nWorkdir:\t\t${workdir}\n\nStart Time:\t\t${submit_time}\nStatus:\t\t\t${status}\n\n========================================================\n\nEste é um e-mail automático.",
+        "Message" : "=========================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - SUBMITTED\n=========================================================\n\nThe HiPS Catalog-gen pipeline for #{data_release} \nhas been submitted and started running.\n\nJob ID:\t\t\t\t\t${job_id}\nJob Name:\t\t\t\t${job_name}\n\nNumber of Workers:\t\t${n_workers} \nMem per Worker:\t\t\t${memory_per_worker}\n\nWorkdir:\t\t\t\t${workdir}\nInputdir:\t\t\t\t${input_dir}\nOutputdir:\t\t\t\t${out_dir}\n\nStart Time:\t\t\t\t${submit_time}\nStatus:\t\t\t\t\t${status}\n\n========================================================\n\nEste é um e-mail automático.",
         "Attach File" : "false",
         "input-character-set" : "UTF-8",
         "SMTP Port" : "25",
         "SMTP Auth" : "false",
-        "From" : "infra@linea.org.br",
+        "From" : "nifi-notifier@linea.org.br",
         "Include All Attributes In Message" : "false",
         "SMTP Hostname" : "mx4.linea.org.br",
         "Subject" : "[IDAC-BR] NiFi | SUBMITTED - [JOB ${job_id}] - [HIPS CATALOG-GEN PIPELINE FOR #{data_release}]",
@@ -2499,21 +2539,33 @@
         "y" : 288.0
       },
       "properties" : {
+        "memory_per_worker" : "$.memory_per_worker",
         "Destination" : "flowfile-attribute",
         "Max String Length" : "200 MB",
         "submit_time" : "$.submit_time",
         "Return Type" : "auto-detect",
+        "threads_per_worker" : "$.threads_per_worker",
         "Null Value Representation" : "empty string",
         "Path Not Found Behavior" : "warn",
         "partition" : "$.partition",
         "job_name" : "$.job_name",
         "workdir" : "$.workdir",
+        "out_dir" : "$.out_dir",
         "job_id" : "$.job_id",
         "nodelist" : "$.nodelist",
+        "input_dir" : "$.input_dir",
+        "n_workers" : "$.n_workers",
         "user" : "$.user",
         "status" : "$.status"
       },
       "propertyDescriptors" : {
+        "memory_per_worker" : {
+          "displayName" : "memory_per_worker",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "memory_per_worker",
+          "sensitive" : false
+        },
         "Destination" : {
           "displayName" : "Destination",
           "dynamic" : false,
@@ -2540,6 +2592,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Return Type",
+          "sensitive" : false
+        },
+        "threads_per_worker" : {
+          "displayName" : "threads_per_worker",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "threads_per_worker",
           "sensitive" : false
         },
         "Null Value Representation" : {
@@ -2577,6 +2636,13 @@
           "name" : "workdir",
           "sensitive" : false
         },
+        "out_dir" : {
+          "displayName" : "out_dir",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "out_dir",
+          "sensitive" : false
+        },
         "job_id" : {
           "displayName" : "job_id",
           "dynamic" : true,
@@ -2589,6 +2655,20 @@
           "dynamic" : true,
           "identifiesControllerService" : false,
           "name" : "nodelist",
+          "sensitive" : false
+        },
+        "input_dir" : {
+          "displayName" : "input_dir",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "input_dir",
+          "sensitive" : false
+        },
+        "n_workers" : {
+          "displayName" : "n_workers",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "n_workers",
           "sensitive" : false
         },
         "user" : {
