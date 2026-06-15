@@ -777,7 +777,7 @@
         "SMTP X-Mailer Header" : "NiFi",
         "Content Type" : "text/plain",
         "SMTP Username" : "Anonymous",
-        "To" : "nubia.garcia@linea.org.br",
+        "To" : "nifi-notifier@linea.org.br",
         "email-ff-content-as-message" : "false",
         "authorization-mode" : "password-based-authorization-mode",
         "SMTP TLS" : "false"
