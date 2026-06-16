@@ -49,6 +49,36 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "a69b29a2-ffed-3a73-8b99-3b793e372579",
+        "name" : "FetchFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7fe8ce31-c733-3322-ba1b-ab8aeea81108",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "completed" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8430c100-543c-3c3d-9e38-4aac8e1824d5",
+        "name" : "RouteOnAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "74e15f1d-6fbe-30d4-9f06-6984d681c12b",
         "name" : "EvaluateJsonPath",
         "type" : "PROCESSOR"
@@ -145,7 +175,7 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "7be722a2-aa1d-37e6-86ac-953493806add",
+      "identifier" : "a0b11ac8-0c3f-3318-9799-cf7f79f55384",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -158,36 +188,6 @@
         "groupId" : "flow-contents-group",
         "id" : "74e15f1d-6fbe-30d4-9f06-6984d681c12b",
         "name" : "EvaluateJsonPath",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "a3047ed7-ff08-380c-b8a6-9ce89c4e89af",
-        "name" : "PutEmail",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "50e4c082-851c-3fe8-8965-c68c88b3dce4",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "completed" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "8430c100-543c-3c3d-9e38-4aac8e1824d5",
-        "name" : "RouteOnAttribute",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -379,6 +379,36 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "a3047ed7-ff08-380c-b8a6-9ce89c4e89af",
+        "name" : "PutEmail",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "dce26302-dea2-3f42-a507-8779e92e1372",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "a69b29a2-ffed-3a73-8b99-3b793e372579",
+        "name" : "FetchFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "00dc43b3-bcf1-3cda-b912-be988aabfd20",
         "name" : "ExecuteStreamCommand",
         "type" : "PROCESSOR"
@@ -555,23 +585,23 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -424.0,
-        "y" : 776.0
+        "y" : 992.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
         "Message" : "=========================================================\nHIPS CATALOG-GEN PIPELINE FOR #{data_release} - COMPLETED\n=========================================================\n\nJob ID:\t\t\t\t\t${job_id}\nJob Name:\t\t\t\t${job_name}\n\nState:\t\t\t\t\t${state}\nJob Execution Time:\t\t${elapsed}\nJob End Time:\t\t\t${end_time}\n\nInputdir:\t\t\t\t${input_dir}\nOutputdir:\t\t\t\t${out_dir}\n\nLog Files Path:\t\t\t${log_files}\n\n=========================================================\n\nEste é um e-mail automático.",
-        "Attach File" : "false",
+        "Attach File" : "true",
         "input-character-set" : "UTF-8",
         "SMTP Port" : "25",
         "SMTP Auth" : "false",
-        "From" : "nifi-notifier@linea.org.br",
+        "From" : "nubia.garcia@linea.org.br",
         "Include All Attributes In Message" : "false",
         "SMTP Hostname" : "mx4.linea.org.br",
         "Subject" : "[IDAC-BR] NiFi | JOB COMPLETED [ID ${job_id}] - [HIPS CATALOG-GEN PIPELINE FOR #{data_release}]",
         "SMTP X-Mailer Header" : "NiFi",
         "Content Type" : "text/plain",
         "SMTP Username" : "Anonymous",
-        "To" : "nifi-notifier@linea.org.br",
+        "To" : "nubia.garcia@linea.org.br    ",
         "email-ff-content-as-message" : "false",
         "authorization-mode" : "password-based-authorization-mode",
         "SMTP TLS" : "false"
@@ -740,6 +770,88 @@
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.PutEmail",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure", "permission.denied", "not.found" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0-M4"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a69b29a2-ffed-3a73-8b99-3b793e372579",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "FetchFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -424.0,
+        "y" : 760.0
+      },
+      "properties" : {
+        "Move Conflict Strategy" : "Fail",
+        "Log level when file not found" : "ERROR",
+        "Log level when permission denied" : "ERROR",
+        "File to Fetch" : "${out_dir}/telemetry.json",
+        "Completion Strategy" : "None"
+      },
+      "propertyDescriptors" : {
+        "Move Conflict Strategy" : {
+          "displayName" : "Move Conflict Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Move Conflict Strategy",
+          "sensitive" : false
+        },
+        "Log level when file not found" : {
+          "displayName" : "Log level when file not found",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log level when file not found",
+          "sensitive" : false
+        },
+        "Move Destination Directory" : {
+          "displayName" : "Move Destination Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Move Destination Directory",
+          "sensitive" : false
+        },
+        "Log level when permission denied" : {
+          "displayName" : "Log level when permission denied",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log level when permission denied",
+          "sensitive" : false
+        },
+        "File to Fetch" : {
+          "displayName" : "File to Fetch",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File to Fetch",
+          "sensitive" : false
+        },
+        "Completion Strategy" : {
+          "displayName" : "Completion Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Completion Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.FetchFile",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ "success", "failure" ],
@@ -2779,7 +2891,7 @@
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "1 min",
+      "schedulingPeriod" : "525600 min",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
