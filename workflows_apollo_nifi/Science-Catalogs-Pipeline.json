@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1782184106364,
+    "description" : "Science Catalogs Pipeline Prototype",
+    "identifier" : "Science-Catalogs-Pipeline",
+    "lastModifiedTimestamp" : 1782184106364,
+    "name" : "Science Catalogs Pipeline",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
