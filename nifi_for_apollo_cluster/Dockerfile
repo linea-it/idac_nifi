@@ -38,8 +38,9 @@ RUN /usr/sbin/addgroup --gid 15050 lsst_dp1
 RUN /usr/sbin/addgroup --gid 15052 lsst_dp2
 RUN /usr/sbin/addgroup --gid 15043 lsst_dr1
 RUN /usr/sbin/addgroup --gid 15044 lsst_dr2
+RUN /usr/sbin/addgroup --gid 15051 container_nifi
 
-RUN /usr/sbin/useradd -u 15428 -g nifi -m -s /bin/bash app.nifi
+RUN /usr/sbin/useradd -u 15428 -g container_nifi -G nifi -m -s /bin/bash app.nifi
 
 COPY nifi/lib /opt/nifi/nifi-current/lib
 COPY nifi/python_extensions /opt/nifi/nifi-current/python_extensions

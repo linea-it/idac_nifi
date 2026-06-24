@@ -30,6 +30,8 @@ services:
            - /data:/data
            # T0 - /scratch
            - /scratch:/scratch
+           # /scripts
+           - /scripts:/scripts
            # DATA STAGING
            - /mnt/staging:/opt/nifi/nifi-current/staging
            # Slurm

@@ -1,0 +1,75 @@
+input:
+  paths:
+    - "/data/public/des/dr2/secondary/catalogs/coadd/hats"
+  format: hats
+
+columns:
+  ra: RA
+  dec: DEC
+  keep:
+    - COADD_OBJECT_ID
+    - TILENAME
+    - RA
+    - DEC
+    - MAG_AUTO_G_DERED
+    - MAG_AUTO_R_DERED
+    - MAG_AUTO_I_DERED
+    - MAG_AUTO_Z_DERED
+    - MAG_AUTO_Y_DERED
+    - MAGERR_AUTO_G
+    - MAGERR_AUTO_R
+    - MAGERR_AUTO_I
+    - MAGERR_AUTO_Z
+    - MAGERR_AUTO_Y
+    - FLUX_AUTO_G
+    - FLUX_AUTO_R
+    - FLUX_AUTO_I
+    - FLUX_AUTO_Z
+    - FLUX_AUTO_Y
+    - FLUXERR_AUTO_G
+    - FLUXERR_AUTO_R
+    - FLUXERR_AUTO_I
+    - FLUXERR_AUTO_Z
+    - FLUXERR_AUTO_Y
+    - FLAGS_G
+    - FLAGS_R
+    - FLAGS_I
+    - FLAGS_Z
+    - FLAGS_Y
+    - EXTENDED_CLASS_COADD
+
+algorithm:
+  selection_mode: score_density_hybrid
+  level_limit: 11
+  score_density_hybrid:
+    score_column: MAG_AUTO_R_DERED
+    adaptive_range: complete
+    order_desc: false
+    keep_invalid_values: true
+    tie_column: null
+
+cluster:
+  #   "local" → LocalCluster on the current machine.
+  #   "slurm" → SLURMCluster via dask-jobqueue (requires dask-jobqueue installed).
+  mode: slurm
+  n_workers: 12
+  threads_per_worker: 16
+  memory_per_worker: "32GB"
+
+  # SLURM options (only used if mode: slurm)
+  slurm:
+    queue: "cpu"
+    account: "hpc-public"
+    job_extra_directives:
+      - "--partition=cpu"
+      - "--time=12:00:00"
+    diagnostics_mode: global
+    interface: "ib0"
+
+output:
+  out_dir: "/scratch/users/app.nifi/hips_catalog/hipscatalog_gen/outputs/nifi_hips_out"
+  overwrite: false
+  cat_name: test
+  target: "0 0"
+  creator_did: "ivo://PRIVATE_USER/test"
+  obs_title: "DES catalog"
