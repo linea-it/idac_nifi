@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1782828851174,
+    "description" : "",
+    "identifier" : "Science-Catalogs-Pipeline-for-DES-DR2",
+    "lastModifiedTimestamp" : 1782828851174,
+    "name" : "Science Catalogs Pipeline for DES DR2",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
