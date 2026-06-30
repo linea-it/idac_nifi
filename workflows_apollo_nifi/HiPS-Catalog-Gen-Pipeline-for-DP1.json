@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1782831982100,
+    "description" : "HiPS wokflow for DP1",
+    "identifier" : "HiPS-Catalog-Gen-Pipeline-for-DP1",
+    "lastModifiedTimestamp" : 1782831982100,
+    "name" : "HiPS Catalog-Gen Pipeline for DP1",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
