@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1782828530846,
+    "description" : "",
+    "identifier" : "Science-Catalogs-Pipeline-for-DP1",
+    "lastModifiedTimestamp" : 1782828530846,
+    "name" : "Science Catalogs Pipeline for DP1",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
