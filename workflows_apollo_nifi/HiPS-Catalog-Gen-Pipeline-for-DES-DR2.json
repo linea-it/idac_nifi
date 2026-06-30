@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1782831719597,
+    "description" : "HiPS WorkFlow for DES",
+    "identifier" : "HiPS-Catalog-Gen-Pipeline-for-DES-DR2",
+    "lastModifiedTimestamp" : 1782831719597,
+    "name" : "HiPS Catalog-Gen Pipeline for DES DR2",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
