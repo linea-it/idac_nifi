@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1782829192918,
+    "description" : "Workflow to DP1",
+    "identifier" : "Science-Catalogs-Pipeline-for-DP1",
+    "lastModifiedTimestamp" : 1782829192918,
+    "name" : "Science Catalogs Pipeline for DP1",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
