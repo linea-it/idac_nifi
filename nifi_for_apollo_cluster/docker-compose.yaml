@@ -35,7 +35,7 @@ services:
            # DATA STAGING
            - /mnt/staging:/opt/nifi/nifi-current/staging
            # Slurm
-           - /opt/apache-nifi/slurm-client/slurm.conf:/etc/slurm/slurm.conf  
+           - ./slurm-client/slurm.conf:/etc/slurm/slurm.conf  
            - /etc/munge:/etc/munge
         environment:
             - NIFI_WEB_HTTPS_HOST=0.0.0.0
