@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1785424369563,
+    "description" : "Workflow to movimentation data",
+    "identifier" : "DataTransferWorflow",
+    "lastModifiedTimestamp" : 1785424369563,
+    "name" : "Data_Transfer_Worflow",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
