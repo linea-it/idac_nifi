@@ -44,8 +44,8 @@ services:
             - NIFI_CLUSTER_IS_NODE=false
             - SINGLE_USER_CREDENTIALS_USERNAME=${SINGLE_USER_CREDENTIALS_USERNAME}
             - SINGLE_USER_CREDENTIALS_PASSWORD=${SINGLE_USER_CREDENTIALS_PASSWORD}
-            - NIFI_JVM_HEAP_INIT=4g
-            - NIFI_JVM_HEAP_MAX=8g
+            - NIFI_JVM_HEAP_INIT=32g
+            - NIFI_JVM_HEAP_MAX=64g
             - TZ=America/Sao_Paulo
 volumes:
     nifi_conf:

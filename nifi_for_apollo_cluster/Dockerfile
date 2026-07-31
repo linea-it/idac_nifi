@@ -1,4 +1,4 @@
-FROM apache/nifi:2.0.0-M4
+FROM apache/nifi:2.10.0
 
 LABEL maintainer="LIneA"
 
@@ -46,7 +46,10 @@ COPY nifi/lib /opt/nifi/nifi-current/lib
 COPY nifi/python_extensions /opt/nifi/nifi-current/python_extensions
 COPY nifi/python_requeriments/requirements.txt /opt/nifi/nifi-current/python_requeriments
 
-RUN pip install --no-cache-dir -r /opt/nifi/nifi-current/python_requeriments/requirements.txt
+RUN pip install \
+    --break-system-packages \
+    --no-cache-dir \
+    -r /opt/nifi/nifi-current/python_requeriments/requirements.txt
 
 EXPOSE 8445
 
