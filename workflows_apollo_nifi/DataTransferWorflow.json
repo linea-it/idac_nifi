@@ -17,51 +17,15 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
+        "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "2f8bcc0b-434a-3501-8cb6-43159506f716",
-        "name" : "ExecuteStreamCommand",
+        "id" : "9ef31ce7-5d6b-352e-b642-1c29187342ce",
+        "name" : "FetchFile",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "83c68b7f-7246-3d3b-8137-ed66708a836f",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "e881050c-a9df-34b9-853c-384f3d12889b",
-        "name" : "GenerateFlowFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : 272.0,
-        "y" : -848.0
-      }, {
-        "x" : -136.0,
-        "y" : -848.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "4bb97bb6-b8c1-3c74-96ad-a10fafe45dc2",
+      "identifier" : "2b8e09a8-65a2-375d-a30d-fd81004fe190",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -70,46 +34,10 @@
       "prioritizers" : [ ],
       "selectedRelationships" : [ "success" ],
       "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "5339124e-a009-3dd6-b9c3-632fcd51e9a7",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -536.0,
-        "y" : -920.0
-      }, {
-        "x" : -376.0,
-        "y" : -920.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f36d3ba6-83ad-35c9-a170-9e41e00fad04",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
-      "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
-        "name" : "PutFile",
+        "id" : "ce4b09eb-c763-3d42-b1cf-96792bc213ad",
+        "name" : "ListFile",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -121,28 +49,28 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "39f3256c-1043-3f20-a438-5f9571286a5a",
-        "name" : "PutEmail",
+        "id" : "49992ead-1136-346d-b9bd-de542efab4d1",
+        "name" : "EvaluateJsonPath",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ae00b102-dc7b-3327-bcec-5db774e5f3e2",
-      "labelIndex" : 1,
+      "identifier" : "3ce48731-9754-300e-8fe9-7cc83436349d",
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "" ],
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
+        "id" : "9ef31ce7-5d6b-352e-b642-1c29187342ce",
+        "name" : "FetchFile",
+        "type" : "PROCESSOR"
       },
-      "zIndex" : 0
+      "zIndex" : 1
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -184,29 +112,26 @@
       "backPressureObjectThreshold" : 10000,
       "bends" : [ {
         "x" : -136.0,
-        "y" : -920.0
-      }, {
-        "x" : -376.0,
-        "y" : -920.0
+        "y" : -856.0
       } ],
       "componentType" : "CONNECTION",
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
+        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
         "name" : "Funnel",
         "type" : "FUNNEL"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f7156126-eec4-3792-bb2c-4fa97fd7ff20",
+      "identifier" : "3f231f56-4926-3554-bc98-e4b3357cb233",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
+      "selectedRelationships" : [ "success" ],
       "source" : {
         "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
         "groupId" : "flow-contents-group",
@@ -219,7 +144,7 @@
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
       "bends" : [ {
-        "x" : -536.0,
+        "x" : 272.0,
         "y" : -848.0
       }, {
         "x" : -136.0,
@@ -235,7 +160,7 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a7a72dfd-cfd2-3c32-ad38-4cfd3b4adc57",
+      "identifier" : "4bb97bb6-b8c1-3c74-96ad-a10fafe45dc2",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -246,128 +171,8 @@
       "source" : {
         "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
         "groupId" : "flow-contents-group",
-        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
+        "id" : "5339124e-a009-3dd6-b9c3-632fcd51e9a7",
         "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-        "groupId" : "flow-contents-group",
-        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-        "name" : "DistributeLoad",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a5771220-7c8e-302b-825a-61e639b327ce",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
-        "groupId" : "flow-contents-group",
-        "id" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "9ef31ce7-5d6b-352e-b642-1c29187342ce",
-        "name" : "FetchFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "2b8e09a8-65a2-375d-a30d-fd81004fe190",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "ce4b09eb-c763-3d42-b1cf-96792bc213ad",
-        "name" : "ListFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "504604f9-b2c2-3204-ae27-81f748c26003",
-        "name" : "PutEmail",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "939c7a73-ec76-3c59-8825-1d28e76d28f2",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
-        "groupId" : "flow-contents-group",
-        "id" : "1d1de670-a99a-3be5-984c-f34e78ff7e7e",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
-        "groupId" : "flow-contents-group",
-        "id" : "1d1de670-a99a-3be5-984c-f34e78ff7e7e",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "dae8dedd-59d2-3aca-aed0-b594c36a6c3e",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "9ef31ce7-5d6b-352e-b642-1c29187342ce",
-        "name" : "FetchFile",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -413,6 +218,66 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
+        "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
+        "groupId" : "flow-contents-group",
+        "id" : "2f8bcc0b-434a-3501-8cb6-43159506f716",
+        "name" : "ExecuteStreamCommand",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "83c68b7f-7246-3d3b-8137-ed66708a836f",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e881050c-a9df-34b9-853c-384f3d12889b",
+        "name" : "GenerateFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "groupId" : "flow-contents-group",
+        "id" : "d50debc5-019f-1000-3f81-6f659ce538a5",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "842b6ba0-3cf0-3319-a195-f3a6ebba397f",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "matched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "49992ead-1136-346d-b9bd-de542efab4d1",
+        "name" : "EvaluateJsonPath",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
         "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
         "groupId" : "flow-contents-group",
         "id" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
@@ -434,72 +299,6 @@
         "groupId" : "flow-contents-group",
         "id" : "0e09faab-0766-3973-94a0-0320122f5a6d",
         "name" : "GetFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "10 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
-        "groupId" : "flow-contents-group",
-        "id" : "41ce44d9-3c75-3246-a81c-d93ed6deb6c7",
-        "name" : "ExecuteStreamCommand",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "c86e9a10-3605-3011-a85f-ab5218d37eb1",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "10 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -536.0,
-        "y" : -1328.0
-      }, {
-        "x" : -536.0,
-        "y" : -1200.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "eedd77f1-442f-3ee5-aa89-21f9f953dabb",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "1" ],
-      "source" : {
-        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-        "groupId" : "flow-contents-group",
-        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-        "name" : "DistributeLoad",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -539,9 +338,42 @@
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+        "groupId" : "flow-contents-group",
+        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
+        "name" : "DistributeLoad",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a5771220-7c8e-302b-825a-61e639b327ce",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "groupId" : "flow-contents-group",
+        "id" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
       "bends" : [ {
+        "x" : -536.0,
+        "y" : -848.0
+      }, {
         "x" : -136.0,
-        "y" : -856.0
+        "y" : -848.0
       } ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -553,7 +385,7 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3f231f56-4926-3554-bc98-e4b3357cb233",
+      "identifier" : "a7a72dfd-cfd2-3c32-ad38-4cfd3b4adc57",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -561,6 +393,204 @@
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
       "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
+        "groupId" : "flow-contents-group",
+        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "39f3256c-1043-3f20-a438-5f9571286a5a",
+        "name" : "PutEmail",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ae00b102-dc7b-3327-bcec-5db774e5f3e2",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "100 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
+        "groupId" : "flow-contents-group",
+        "id" : "41ce44d9-3c75-3246-a81c-d93ed6deb6c7",
+        "name" : "ExecuteStreamCommand",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c86e9a10-3605-3011-a85f-ab5218d37eb1",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "504604f9-b2c2-3204-ae27-81f748c26003",
+        "name" : "PutEmail",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e5bbd22e-9f85-3c24-a776-887e761c2766",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "groupId" : "flow-contents-group",
+        "id" : "d50debc5-019f-1000-3f81-6f659ce538a5",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 3
+    }, {
+      "backPressureDataSizeThreshold" : "10 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : -536.0,
+        "y" : -1328.0
+      }, {
+        "x" : -536.0,
+        "y" : -1200.0
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
+        "groupId" : "flow-contents-group",
+        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "eedd77f1-442f-3ee5-aa89-21f9f953dabb",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
+      "selectedRelationships" : [ "1" ],
+      "source" : {
+        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+        "groupId" : "flow-contents-group",
+        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
+        "name" : "DistributeLoad",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : -536.0,
+        "y" : -920.0
+      }, {
+        "x" : -376.0,
+        "y" : -920.0
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f36d3ba6-83ad-35c9-a170-9e41e00fad04",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
+        "groupId" : "flow-contents-group",
+        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : -136.0,
+        "y" : -920.0
+      }, {
+        "x" : -376.0,
+        "y" : -920.0
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f7156126-eec4-3792-bb2c-4fa97fd7ff20",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
       "source" : {
         "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
         "groupId" : "flow-contents-group",
@@ -583,41 +613,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2.0.0-M4"
-        },
-        "type" : "org.apache.nifi.serialization.RecordReaderFactory"
-      } ],
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "fe33e4b0-4a2f-3818-8337-20905502152c",
-      "name" : "ParquetReader",
-      "properties" : {
-        "avro-read-compatibility" : "true"
-      },
-      "propertyDescriptors" : {
-        "avro-read-compatibility" : {
-          "displayName" : "Avro Read Compatibility",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "avro-read-compatibility",
-          "sensitive" : false
-        }
-      },
-      "scheduledState" : "DISABLED",
-      "type" : "org.apache.nifi.parquet.ParquetReader"
-    }, {
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-parquet-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
-      },
-      "comments" : "",
-      "componentType" : "CONTROLLER_SERVICE",
-      "controllerServiceApis" : [ {
-        "bundle" : {
-          "artifact" : "nifi-standard-services-api-nar",
-          "group" : "org.apache.nifi",
-          "version" : "2.0.0-M4"
+          "version" : "2.10.0"
         },
         "type" : "org.apache.nifi.serialization.RecordSetWriterFactory"
       } ],
@@ -792,6 +788,40 @@
       },
       "scheduledState" : "DISABLED",
       "type" : "org.apache.nifi.parquet.ParquetRecordSetWriter"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-parquet-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0-M4"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "type" : "org.apache.nifi.serialization.RecordReaderFactory"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "fe33e4b0-4a2f-3818-8337-20905502152c",
+      "name" : "ParquetReader",
+      "properties" : {
+        "avro-read-compatibility" : "true"
+      },
+      "propertyDescriptors" : {
+        "avro-read-compatibility" : {
+          "displayName" : "Avro Read Compatibility",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "avro-read-compatibility",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.parquet.ParquetReader"
     } ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
     "defaultBackPressureObjectThreshold" : 10000,
@@ -803,27 +833,27 @@
     "funnels" : [ {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-      "position" : {
-        "x" : -160.0,
-        "y" : -792.0
-      }
-    }, {
-      "componentType" : "FUNNEL",
-      "groupIdentifier" : "flow-contents-group",
       "identifier" : "0bbb24d3-40f4-3d28-83ab-315430433373",
       "position" : {
         "x" : -888.0,
         "y" : -944.0
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "6825a5f2-e931-333c-b813-ee88401cea8c",
+      "position" : {
+        "x" : -160.0,
+        "y" : -792.0
       }
     } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Data Transfer - Test",
+    "name" : "Data Transfer",
     "outputPorts" : [ ],
-    "parameterContextName" : "data_release",
+    "parameterContextName" : "General Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -836,302 +866,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e881050c-a9df-34b9-853c-384f3d12889b",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "GenerateFlowFile",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -1192.0,
-        "y" : -1840.0
-      },
-      "properties" : {
-        "character-set" : "UTF-8",
-        "File Size" : "0B",
-        "Batch Size" : "1",
-        "Unique FlowFiles" : "false",
-        "Data Format" : "Text"
-      },
-      "propertyDescriptors" : {
-        "character-set" : {
-          "displayName" : "Character Set",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "character-set",
-          "sensitive" : false
-        },
-        "File Size" : {
-          "displayName" : "File Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "File Size",
-          "sensitive" : false
-        },
-        "mime-type" : {
-          "displayName" : "Mime Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "mime-type",
-          "sensitive" : false
-        },
-        "generate-ff-custom-text" : {
-          "displayName" : "Custom Text",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "generate-ff-custom-text",
-          "sensitive" : false
-        },
-        "Batch Size" : {
-          "displayName" : "Batch Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Batch Size",
-          "sensitive" : false
-        },
-        "Unique FlowFiles" : {
-          "displayName" : "Unique FlowFiles",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Unique FlowFiles",
-          "sensitive" : false
-        },
-        "Data Format" : {
-          "displayName" : "Data Format",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Data Format",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "525600 min",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ce4b09eb-c763-3d42-b1cf-96792bc213ad",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "ListFile",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 752.0,
-        "y" : -1848.0
-      },
-      "properties" : {
-        "Minimum File Age" : "0 sec",
-        "et-initial-listing-target" : "all",
-        "max-listing-time" : "3 mins",
-        "et-time-window" : "3 hours",
-        "et-node-identifier" : "${hostname()}",
-        "Recurse Subdirectories" : "true",
-        "File Filter" : "mv.finished",
-        "Include File Attributes" : "true",
-        "Input Directory Location" : "Local",
-        "listing-strategy" : "timestamps",
-        "Input Directory" : "/scratch/users/app.nifi/data_transfer",
-        "target-system-timestamp-precision" : "auto-detect",
-        "track-performance" : "false",
-        "max-performance-metrics" : "100",
-        "Minimum File Size" : "0 B",
-        "Ignore Hidden Files" : "true",
-        "max-operation-time" : "10 secs"
-      },
-      "propertyDescriptors" : {
-        "Minimum File Age" : {
-          "displayName" : "Minimum File Age",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Minimum File Age",
-          "sensitive" : false
-        },
-        "et-initial-listing-target" : {
-          "displayName" : "Entity Tracking Initial Listing Target",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "et-initial-listing-target",
-          "sensitive" : false
-        },
-        "Maximum File Age" : {
-          "displayName" : "Maximum File Age",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Age",
-          "sensitive" : false
-        },
-        "max-listing-time" : {
-          "displayName" : "Max Directory Listing Time",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "max-listing-time",
-          "sensitive" : false
-        },
-        "record-writer" : {
-          "displayName" : "Record Writer",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "record-writer",
-          "sensitive" : false
-        },
-        "Maximum File Size" : {
-          "displayName" : "Maximum File Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Size",
-          "sensitive" : false
-        },
-        "et-time-window" : {
-          "displayName" : "Entity Tracking Time Window",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "et-time-window",
-          "sensitive" : false
-        },
-        "et-node-identifier" : {
-          "displayName" : "Entity Tracking Node Identifier",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "et-node-identifier",
-          "sensitive" : false
-        },
-        "Recurse Subdirectories" : {
-          "displayName" : "Recurse Subdirectories",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Recurse Subdirectories",
-          "sensitive" : false
-        },
-        "File Filter" : {
-          "displayName" : "File Filter",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "File Filter",
-          "sensitive" : false
-        },
-        "Path Filter" : {
-          "displayName" : "Path Filter",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Path Filter",
-          "sensitive" : false
-        },
-        "Include File Attributes" : {
-          "displayName" : "Include File Attributes",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Include File Attributes",
-          "sensitive" : false
-        },
-        "Input Directory Location" : {
-          "displayName" : "Input Directory Location",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Input Directory Location",
-          "sensitive" : false
-        },
-        "listing-strategy" : {
-          "displayName" : "Listing Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "listing-strategy",
-          "sensitive" : false
-        },
-        "Input Directory" : {
-          "displayName" : "Input Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Input Directory",
-          "sensitive" : false
-        },
-        "target-system-timestamp-precision" : {
-          "displayName" : "Target System Timestamp Precision",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "target-system-timestamp-precision",
-          "sensitive" : false
-        },
-        "track-performance" : {
-          "displayName" : "Track Performance",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "track-performance",
-          "sensitive" : false
-        },
-        "max-performance-metrics" : {
-          "displayName" : "Maximum Number of Files to Track",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "max-performance-metrics",
-          "sensitive" : false
-        },
-        "Minimum File Size" : {
-          "displayName" : "Minimum File Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Minimum File Size",
-          "sensitive" : false
-        },
-        "Ignore Hidden Files" : {
-          "displayName" : "Ignore Hidden Files",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Ignore Hidden Files",
-          "sensitive" : false
-        },
-        "et-state-cache" : {
-          "displayName" : "Entity Tracking State Cache",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "et-state-cache",
-          "sensitive" : false
-        },
-        "max-operation-time" : {
-          "displayName" : "Max Disk Operation Time",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "max-operation-time",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "1 min",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.ListFile",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
       "comments" : "Processor responsável por varrer o diretório de origem dos dados.\nPath original: /data/dtn/lsst/download",
       "componentType" : "PROCESSOR",
@@ -1150,7 +885,7 @@
         "Keep Source File" : "false",
         "Minimum File Age" : "0 sec",
         "Polling Interval" : "0 sec",
-        "Input Directory" : "/scratch/users/app.nifi/data_origem",
+        "Input Directory" : "/data/dtn/lsst/download/fake_dp1",
         "Batch Size" : "100",
         "Minimum File Size" : "0 B",
         "Ignore Hidden Files" : "true",
@@ -1253,13 +988,13 @@
       "type" : "org.apache.nifi.processors.standard.GetFile",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "output stream", "original", "nonzero status" ],
+      "autoTerminatedRelationships" : [ "nonzero status", "original", "output stream" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
       "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
       "componentType" : "PROCESSOR",
@@ -1275,27 +1010,27 @@
         "y" : -1568.0
       },
       "properties" : {
-        "argumentsStrategy" : "Command Arguments Property",
         "Max Attribute Length" : "256",
+        "Command Arguments Strategy" : "Command Arguments Property",
         "Working Directory" : "/scripts/app.nifi/DATA_TRANSFER",
         "Command Path" : "/bin/bash",
         "Argument Delimiter" : " ",
         "Ignore STDIN" : "false",
-        "Command Arguments" : "-c \"su - app.nifi -c ' /scripts/app.nifi/DATA_TRANSFER/scan_data.sh /scratch/users/app.nifi/data_origem > /scratch/users/app.nifi/data_transfer/scan_data.txt'\""
+        "Command Arguments" : "-c \"su - app.nifi -c 'sbatch /scripts/app.nifi/DATA_TRANSFER/submit_scan_data.sh'\""
       },
       "propertyDescriptors" : {
-        "argumentsStrategy" : {
-          "displayName" : "Command Arguments Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "argumentsStrategy",
-          "sensitive" : false
-        },
         "Max Attribute Length" : {
           "displayName" : "Max Attribute Length",
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Max Attribute Length",
+          "sensitive" : false
+        },
+        "Command Arguments Strategy" : {
+          "displayName" : "Command Arguments Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Command Arguments Strategy",
           "sensitive" : false
         },
         "Output MIME Type" : {
@@ -1358,85 +1093,666 @@
       "type" : "org.apache.nifi.processors.standard.ExecuteStreamCommand",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "failure", "success" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
+        "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
-      "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+      "comments" : "",
       "componentType" : "PROCESSOR",
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
+      "identifier" : "39f3256c-1043-3f20-a438-5f9571286a5a",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
+      "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -312.0,
-        "y" : -1616.0
+        "x" : -1040.0,
+        "y" : -760.0
       },
       "properties" : {
-        "subdir" : "${path:substringBeforeLast('/')}",
-        "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100",
-        "origin" : "${absolute.path}"
+        "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
+        "Message" : "=====================================================\nDATA TRANSFER FOR #{data_release} - ERROR\n=====================================================\n\nPath to the logs files:\n${stderr_file}\n\n=====================================================\n\n\nEste é um e-mail automático.",
+        "Attach File" : "false",
+        "SMTP Port" : "25",
+        "SMTP Auth" : "false",
+        "Input Character Set" : "UTF-8",
+        "From" : "nubia.garcia@linea.org.br",
+        "Include All Attributes In Message" : "false",
+        "SMTP Hostname" : "mx4.linea.org.br",
+        "Authorization Mode" : "password-based-authorization-mode",
+        "Subject" : "[IDAC-BR] NiFi | ERROR DATA TRANSFER | [#{data_release}]",
+        "FlowFile Content as Message" : "false",
+        "SMTP X-Mailer Header" : "NiFi",
+        "SMTP START TLS" : "false",
+        "Content Type" : "text/plain",
+        "SMTP Username" : "Anonymous",
+        "To" : "nubia.garcia@linea.org.br"
       },
       "propertyDescriptors" : {
-        "subdir" : {
-          "displayName" : "subdir",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "subdir",
-          "sensitive" : false
-        },
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
+        "CC" : {
+          "displayName" : "CC",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
+          "name" : "CC",
           "sensitive" : false
         },
-        "Store State" : {
-          "displayName" : "Store State",
+        "Reply-To" : {
+          "displayName" : "Reply-To",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Store State",
+          "name" : "Reply-To",
           "sensitive" : false
         },
-        "canonical-value-lookup-cache-size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
+        "SMTP Socket Factory" : {
+          "displayName" : "SMTP Socket Factory",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "canonical-value-lookup-cache-size",
+          "name" : "SMTP Socket Factory",
           "sensitive" : false
         },
-        "origin" : {
-          "displayName" : "origin",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "origin",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
+        "BCC" : {
+          "displayName" : "BCC",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
+          "name" : "BCC",
+          "sensitive" : false
+        },
+        "Message" : {
+          "displayName" : "Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Message",
+          "sensitive" : false
+        },
+        "Attach File" : {
+          "displayName" : "Attach File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Attach File",
+          "sensitive" : false
+        },
+        "Attributes to Send as Headers Regular Expression" : {
+          "displayName" : "Attributes to Send as Headers Regular Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Send as Headers Regular Expression",
+          "sensitive" : false
+        },
+        "SMTP Port" : {
+          "displayName" : "SMTP Port",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Port",
+          "sensitive" : false
+        },
+        "SMTP Auth" : {
+          "displayName" : "SMTP Auth",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Auth",
+          "sensitive" : false
+        },
+        "Input Character Set" : {
+          "displayName" : "Input Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Input Character Set",
+          "sensitive" : false
+        },
+        "From" : {
+          "displayName" : "From",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "From",
+          "sensitive" : false
+        },
+        "Include All Attributes In Message" : {
+          "displayName" : "Include All Attributes In Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include All Attributes In Message",
+          "sensitive" : false
+        },
+        "SMTP Hostname" : {
+          "displayName" : "SMTP Hostname",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Hostname",
+          "sensitive" : false
+        },
+        "Authorization Mode" : {
+          "displayName" : "Authorization Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authorization Mode",
+          "sensitive" : false
+        },
+        "OAuth2 Access Token Provider" : {
+          "displayName" : "OAuth2 Access Token Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "OAuth2 Access Token Provider",
+          "sensitive" : false
+        },
+        "Subject" : {
+          "displayName" : "Subject",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subject",
+          "sensitive" : false
+        },
+        "FlowFile Content as Message" : {
+          "displayName" : "FlowFile Content as Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "FlowFile Content as Message",
+          "sensitive" : false
+        },
+        "SMTP X-Mailer Header" : {
+          "displayName" : "SMTP X-Mailer Header",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP X-Mailer Header",
+          "sensitive" : false
+        },
+        "SMTP START TLS" : {
+          "displayName" : "SMTP START TLS",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP START TLS",
+          "sensitive" : false
+        },
+        "Content Type" : {
+          "displayName" : "Content Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Content Type",
+          "sensitive" : false
+        },
+        "SMTP Username" : {
+          "displayName" : "SMTP Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Username",
+          "sensitive" : false
+        },
+        "To" : {
+          "displayName" : "To",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "To",
+          "sensitive" : false
+        },
+        "SMTP Password" : {
+          "displayName" : "SMTP Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Password",
+          "sensitive" : true
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutEmail",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "nonzero status", "original", "output stream" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.10.0"
+      },
+      "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "41ce44d9-3c75-3246-a81c-d93ed6deb6c7",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ExecuteStreamCommand",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -320.0,
+        "y" : -672.0
+      },
+      "properties" : {
+        "Max Attribute Length" : "256",
+        "Command Arguments Strategy" : "Command Arguments Property",
+        "Working Directory" : "/scripts/app.nifi/DATA_TRANSFER",
+        "Command Path" : "/bin/bash",
+        "Argument Delimiter" : " ",
+        "Ignore STDIN" : "false",
+        "Command Arguments" : "-c \"su - app.nifi -c '/scripts/app.nifi/DATA_TRANSFER/links_for_data.sh #{absolute.path.origem} #{absolute.path.destino}'\""
+      },
+      "propertyDescriptors" : {
+        "Max Attribute Length" : {
+          "displayName" : "Max Attribute Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Attribute Length",
+          "sensitive" : false
+        },
+        "Command Arguments Strategy" : {
+          "displayName" : "Command Arguments Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Command Arguments Strategy",
+          "sensitive" : false
+        },
+        "Output MIME Type" : {
+          "displayName" : "Output MIME Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Output MIME Type",
+          "sensitive" : false
+        },
+        "Working Directory" : {
+          "displayName" : "Working Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Working Directory",
+          "sensitive" : false
+        },
+        "Command Path" : {
+          "displayName" : "Command Path",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Command Path",
+          "sensitive" : false
+        },
+        "Output Destination Attribute" : {
+          "displayName" : "Output Destination Attribute",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Output Destination Attribute",
+          "sensitive" : false
+        },
+        "Argument Delimiter" : {
+          "displayName" : "Argument Delimiter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Argument Delimiter",
+          "sensitive" : false
+        },
+        "Ignore STDIN" : {
+          "displayName" : "Ignore STDIN",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ignore STDIN",
+          "sensitive" : false
+        },
+        "Command Arguments" : {
+          "displayName" : "Command Arguments",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Command Arguments",
           "sensitive" : false
         }
       },
       "retriedRelationships" : [ ],
       "retryCount" : 10,
-      "runDurationMillis" : 25,
+      "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "type" : "org.apache.nifi.processors.standard.ExecuteStreamCommand",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.10.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "49992ead-1136-346d-b9bd-de542efab4d1",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "EvaluateJsonPath",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 752.0,
+        "y" : -1384.0
+      },
+      "properties" : {
+        "total_obj" : "$.total_obj",
+        "Destination" : "flowfile-attribute",
+        "total_fits" : "$.total_fits",
+        "total_vol" : "$.total_vol",
+        "Max String Length" : "200 MB",
+        "total_hsp" : "$.total_hsp",
+        "Return Type" : "auto-detect",
+        "total_tracts" : "$.total_tracts",
+        "total_parq" : "$.total_parq",
+        "total_col" : "$.total_col",
+        "Null Value Representation" : "empty string",
+        "Path Not Found Behavior" : "warn"
+      },
+      "propertyDescriptors" : {
+        "total_obj" : {
+          "displayName" : "total_obj",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_obj",
+          "sensitive" : false
+        },
+        "Destination" : {
+          "displayName" : "Destination",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Destination",
+          "sensitive" : false
+        },
+        "total_fits" : {
+          "displayName" : "total_fits",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_fits",
+          "sensitive" : false
+        },
+        "total_vol" : {
+          "displayName" : "total_vol",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_vol",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "total_hsp" : {
+          "displayName" : "total_hsp",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_hsp",
+          "sensitive" : false
+        },
+        "Return Type" : {
+          "displayName" : "Return Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Return Type",
+          "sensitive" : false
+        },
+        "total_tracts" : {
+          "displayName" : "total_tracts",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_tracts",
+          "sensitive" : false
+        },
+        "total_parq" : {
+          "displayName" : "total_parq",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_parq",
+          "sensitive" : false
+        },
+        "total_col" : {
+          "displayName" : "total_col",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_col",
+          "sensitive" : false
+        },
+        "Null Value Representation" : {
+          "displayName" : "Null Value Representation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Null Value Representation",
+          "sensitive" : false
+        },
+        "Path Not Found Behavior" : {
+          "displayName" : "Path Not Found Behavior",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Not Found Behavior",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure", "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.10.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "504604f9-b2c2-3204-ae27-81f748c26003",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutEmail",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 752.0,
+        "y" : -968.0
+      },
+      "properties" : {
+        "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
+        "Message" : "=========================================================\nDATA TRANSFER FROM #{data_release} - COMPLETED\n=========================================================\n\n\nSource Dir: \t#{absolute.path.origem}\nFinal Dir: \t\t#{absolute.path.destino}\n\nTotal Tracs:     ${total_tracts}\nTotal Objects:   ${total_obj}\nTotal Columns:   ${total_col}\n\nThe data report is attached.\n\n=========================================================\n\nEste é um e-mail automático.",
+        "Attach File" : "true",
+        "SMTP Port" : "25",
+        "SMTP Auth" : "false",
+        "Input Character Set" : "UTF-8",
+        "From" : "nubia.garcia@linea.org.br",
+        "Include All Attributes In Message" : "false",
+        "SMTP Hostname" : "mx4.linea.org.br",
+        "Authorization Mode" : "password-based-authorization-mode",
+        "Subject" : "[IDAC-BR] NiFi | DATA TRANSFER COMPLETED | DATA TRANSFER FROM #{data_release}",
+        "FlowFile Content as Message" : "false",
+        "SMTP X-Mailer Header" : "NiFi",
+        "SMTP START TLS" : "false",
+        "Content Type" : "text/plain",
+        "SMTP Username" : "Anonymous",
+        "To" : "nubia.garcia@linea.org.br"
+      },
+      "propertyDescriptors" : {
+        "CC" : {
+          "displayName" : "CC",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "CC",
+          "sensitive" : false
+        },
+        "Reply-To" : {
+          "displayName" : "Reply-To",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Reply-To",
+          "sensitive" : false
+        },
+        "SMTP Socket Factory" : {
+          "displayName" : "SMTP Socket Factory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Socket Factory",
+          "sensitive" : false
+        },
+        "BCC" : {
+          "displayName" : "BCC",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "BCC",
+          "sensitive" : false
+        },
+        "Message" : {
+          "displayName" : "Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Message",
+          "sensitive" : false
+        },
+        "Attach File" : {
+          "displayName" : "Attach File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Attach File",
+          "sensitive" : false
+        },
+        "Attributes to Send as Headers Regular Expression" : {
+          "displayName" : "Attributes to Send as Headers Regular Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Send as Headers Regular Expression",
+          "sensitive" : false
+        },
+        "SMTP Port" : {
+          "displayName" : "SMTP Port",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Port",
+          "sensitive" : false
+        },
+        "SMTP Auth" : {
+          "displayName" : "SMTP Auth",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Auth",
+          "sensitive" : false
+        },
+        "Input Character Set" : {
+          "displayName" : "Input Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Input Character Set",
+          "sensitive" : false
+        },
+        "From" : {
+          "displayName" : "From",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "From",
+          "sensitive" : false
+        },
+        "Include All Attributes In Message" : {
+          "displayName" : "Include All Attributes In Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include All Attributes In Message",
+          "sensitive" : false
+        },
+        "SMTP Hostname" : {
+          "displayName" : "SMTP Hostname",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Hostname",
+          "sensitive" : false
+        },
+        "Authorization Mode" : {
+          "displayName" : "Authorization Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authorization Mode",
+          "sensitive" : false
+        },
+        "OAuth2 Access Token Provider" : {
+          "displayName" : "OAuth2 Access Token Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "OAuth2 Access Token Provider",
+          "sensitive" : false
+        },
+        "Subject" : {
+          "displayName" : "Subject",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subject",
+          "sensitive" : false
+        },
+        "FlowFile Content as Message" : {
+          "displayName" : "FlowFile Content as Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "FlowFile Content as Message",
+          "sensitive" : false
+        },
+        "SMTP X-Mailer Header" : {
+          "displayName" : "SMTP X-Mailer Header",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP X-Mailer Header",
+          "sensitive" : false
+        },
+        "SMTP START TLS" : {
+          "displayName" : "SMTP START TLS",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP START TLS",
+          "sensitive" : false
+        },
+        "Content Type" : {
+          "displayName" : "Content Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Content Type",
+          "sensitive" : false
+        },
+        "SMTP Username" : {
+          "displayName" : "SMTP Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Username",
+          "sensitive" : false
+        },
+        "To" : {
+          "displayName" : "To",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "To",
+          "sensitive" : false
+        },
+        "SMTP Password" : {
+          "displayName" : "SMTP Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Password",
+          "sensitive" : true
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutEmail",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ ],
@@ -1445,7 +1761,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
       "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
       "componentType" : "PROCESSOR",
@@ -1539,62 +1855,40 @@
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
+        "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
-      "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+      "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
       "componentType" : "PROCESSOR",
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "1d1de670-a99a-3be5-984c-f34e78ff7e7e",
+      "identifier" : "934698d8-5535-3dbf-8f23-21374b46b8be",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
+      "name" : "DistributeLoad",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 752.0,
-        "y" : -1368.0
+        "x" : -312.0,
+        "y" : -1392.0
       },
       "properties" : {
-        "filename" : "data_report.txt",
-        "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100"
+        "Number of Relationships" : "3",
+        "Distribution Strategy" : "round robin"
       },
       "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
+        "Number of Relationships" : {
+          "displayName" : "Number of Relationships",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
+          "name" : "Number of Relationships",
           "sensitive" : false
         },
-        "filename" : {
-          "displayName" : "filename",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "filename",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
+        "Distribution Strategy" : {
+          "displayName" : "Distribution Strategy",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "canonical-value-lookup-cache-size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "canonical-value-lookup-cache-size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
+          "name" : "Distribution Strategy",
           "sensitive" : false
         }
       },
@@ -1605,16 +1899,16 @@
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "type" : "org.apache.nifi.processors.standard.DistributeLoad",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "failure", "permission.denied", "not.found" ],
+      "autoTerminatedRelationships" : [ "failure", "not.found", "permission.denied" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1631,9 +1925,9 @@
       },
       "properties" : {
         "Move Conflict Strategy" : "Fail",
-        "Log level when file not found" : "ERROR",
-        "Log level when permission denied" : "ERROR",
-        "File to Fetch" : "/scratch/users/app.nifi/data_transfer/scan_data.txt",
+        "File not Found Log Level" : "ERROR",
+        "Permission Denied Log Level" : "ERROR",
+        "File to Fetch" : "/scratch/users/app.nifi/data_transfer/scan_data.json",
         "Completion Strategy" : "None"
       },
       "propertyDescriptors" : {
@@ -1644,13 +1938,6 @@
           "name" : "Move Conflict Strategy",
           "sensitive" : false
         },
-        "Log level when file not found" : {
-          "displayName" : "Log level when file not found",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Log level when file not found",
-          "sensitive" : false
-        },
         "Move Destination Directory" : {
           "displayName" : "Move Destination Directory",
           "dynamic" : false,
@@ -1658,11 +1945,18 @@
           "name" : "Move Destination Directory",
           "sensitive" : false
         },
-        "Log level when permission denied" : {
-          "displayName" : "Log level when permission denied",
+        "File not Found Log Level" : {
+          "displayName" : "File not Found Log Level",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Log level when permission denied",
+          "name" : "File not Found Log Level",
+          "sensitive" : false
+        },
+        "Permission Denied Log Level" : {
+          "displayName" : "Permission Denied Log Level",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Permission Denied Log Level",
           "sensitive" : false
         },
         "File to Fetch" : {
@@ -1690,199 +1984,457 @@
       "type" : "org.apache.nifi.processors.standard.FetchFile",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "39f3256c-1043-3f20-a438-5f9571286a5a",
+      "identifier" : "ce4b09eb-c763-3d42-b1cf-96792bc213ad",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "PutEmail",
+      "name" : "ListFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1040.0,
-        "y" : -760.0
+        "x" : 752.0,
+        "y" : -1848.0
       },
       "properties" : {
-        "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
-        "Message" : "=====================================================\nDATA TRANSFER FOR #{data_release} - ERROR\n=====================================================\n\nPath to the logs files:\n${stderr_file}\n\n=====================================================\n\n\nEste é um e-mail automático.",
-        "Attach File" : "false",
-        "input-character-set" : "UTF-8",
-        "SMTP Port" : "25",
-        "SMTP Auth" : "false",
-        "From" : "nubia.garcia@linea.org.br",
-        "Include All Attributes In Message" : "false",
-        "SMTP Hostname" : "mx4.linea.org.br",
-        "Subject" : "[IDAC-BR] NiFi | ERROR DATA TRANSFER | [#{data_release}]",
-        "SMTP X-Mailer Header" : "NiFi",
-        "Content Type" : "text/plain",
-        "SMTP Username" : "Anonymous",
-        "To" : "nubia.garcia@linea.org.br",
-        "email-ff-content-as-message" : "false",
-        "authorization-mode" : "password-based-authorization-mode",
-        "SMTP TLS" : "false"
+        "Minimum File Age" : "0 sec",
+        "Entity Tracking Initial Listing Target" : "all",
+        "Track Performance" : "false",
+        "Max Disk Operation Time" : "10 secs",
+        "Max Directory Listing Time" : "3 mins",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "mv.finished",
+        "Include File Attributes" : "true",
+        "Input Directory Location" : "Local",
+        "Target System Timestamp Precision" : "auto-detect",
+        "Input Directory" : "/scratch/users/app.nifi/data_transfer",
+        "Entity Tracking Node Identifier" : "${hostname()}",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Listing Strategy" : "timestamps",
+        "Entity Tracking Time Window" : "3 hours",
+        "Maximum Number of Files to Track" : "100"
       },
       "propertyDescriptors" : {
-        "CC" : {
-          "displayName" : "CC",
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "CC",
+          "name" : "Minimum File Age",
           "sensitive" : false
         },
-        "SMTP Socket Factory" : {
-          "displayName" : "SMTP Socket Factory",
+        "Entity Tracking Initial Listing Target" : {
+          "displayName" : "Entity Tracking Initial Listing Target",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "SMTP Socket Factory",
+          "name" : "Entity Tracking Initial Listing Target",
           "sensitive" : false
         },
-        "BCC" : {
-          "displayName" : "BCC",
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "BCC",
+          "name" : "Maximum File Age",
           "sensitive" : false
         },
-        "Message" : {
-          "displayName" : "Message",
+        "Track Performance" : {
+          "displayName" : "Track Performance",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Message",
+          "name" : "Track Performance",
           "sensitive" : false
         },
-        "Attach File" : {
-          "displayName" : "Attach File",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Attach File",
-          "sensitive" : false
-        },
-        "attribute-name-regex" : {
-          "displayName" : "Attributes to Send as Headers (Regex)",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "attribute-name-regex",
-          "sensitive" : false
-        },
-        "input-character-set" : {
-          "displayName" : "Input Character Set",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "input-character-set",
-          "sensitive" : false
-        },
-        "SMTP Port" : {
-          "displayName" : "SMTP Port",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Port",
-          "sensitive" : false
-        },
-        "SMTP Auth" : {
-          "displayName" : "SMTP Auth",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Auth",
-          "sensitive" : false
-        },
-        "From" : {
-          "displayName" : "From",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "From",
-          "sensitive" : false
-        },
-        "Include All Attributes In Message" : {
-          "displayName" : "Include All Attributes In Message",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Include All Attributes In Message",
-          "sensitive" : false
-        },
-        "SMTP Hostname" : {
-          "displayName" : "SMTP Hostname",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Hostname",
-          "sensitive" : false
-        },
-        "Subject" : {
-          "displayName" : "Subject",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Subject",
-          "sensitive" : false
-        },
-        "SMTP X-Mailer Header" : {
-          "displayName" : "SMTP X-Mailer Header",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP X-Mailer Header",
-          "sensitive" : false
-        },
-        "oauth2-access-token-provider" : {
-          "displayName" : "OAuth2 Access Token Provider",
+        "Entity Tracking State Cache" : {
+          "displayName" : "Entity Tracking State Cache",
           "dynamic" : false,
           "identifiesControllerService" : true,
-          "name" : "oauth2-access-token-provider",
+          "name" : "Entity Tracking State Cache",
           "sensitive" : false
         },
-        "Content Type" : {
-          "displayName" : "Content Type",
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Content Type",
+          "name" : "Maximum File Size",
           "sensitive" : false
         },
-        "SMTP Username" : {
-          "displayName" : "SMTP Username",
+        "Max Disk Operation Time" : {
+          "displayName" : "Max Disk Operation Time",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "SMTP Username",
+          "name" : "Max Disk Operation Time",
           "sensitive" : false
         },
-        "To" : {
-          "displayName" : "To",
+        "Max Directory Listing Time" : {
+          "displayName" : "Max Directory Listing Time",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "To",
+          "name" : "Max Directory Listing Time",
           "sensitive" : false
         },
-        "SMTP Password" : {
-          "displayName" : "SMTP Password",
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "SMTP Password",
-          "sensitive" : true
-        },
-        "email-ff-content-as-message" : {
-          "displayName" : "Flow file content as message",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "email-ff-content-as-message",
+          "name" : "Recurse Subdirectories",
           "sensitive" : false
         },
-        "authorization-mode" : {
-          "displayName" : "Authorization Mode",
+        "File Filter" : {
+          "displayName" : "File Filter",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "authorization-mode",
+          "name" : "File Filter",
           "sensitive" : false
         },
-        "SMTP TLS" : {
-          "displayName" : "SMTP STARTTLS",
+        "Path Filter" : {
+          "displayName" : "Path Filter",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "SMTP TLS",
+          "name" : "Path Filter",
+          "sensitive" : false
+        },
+        "Include File Attributes" : {
+          "displayName" : "Include File Attributes",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include File Attributes",
+          "sensitive" : false
+        },
+        "Input Directory Location" : {
+          "displayName" : "Input Directory Location",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Input Directory Location",
+          "sensitive" : false
+        },
+        "Target System Timestamp Precision" : {
+          "displayName" : "Target System Timestamp Precision",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Target System Timestamp Precision",
+          "sensitive" : false
+        },
+        "Input Directory" : {
+          "displayName" : "Input Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Input Directory",
+          "sensitive" : false
+        },
+        "Entity Tracking Node Identifier" : {
+          "displayName" : "Entity Tracking Node Identifier",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Entity Tracking Node Identifier",
+          "sensitive" : false
+        },
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ignore Hidden Files",
+          "sensitive" : false
+        },
+        "Listing Strategy" : {
+          "displayName" : "Listing Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Listing Strategy",
+          "sensitive" : false
+        },
+        "Entity Tracking Time Window" : {
+          "displayName" : "Entity Tracking Time Window",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Entity Tracking Time Window",
+          "sensitive" : false
+        },
+        "Maximum Number of Files to Track" : {
+          "displayName" : "Maximum Number of Files to Track",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum Number of Files to Track",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "1 min",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ListFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.10.0"
+      },
+      "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d50debc5-019f-1000-3f81-6f659ce538a5",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 760.0,
+        "y" : -1184.0
+      },
+      "properties" : {
+        "filename" : "data_report.json",
+        "Store State" : "Do not store state",
+        "Cache Value Lookup Cache Size" : "100"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "filename" : {
+          "displayName" : "filename",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "filename",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.10.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e881050c-a9df-34b9-853c-384f3d12889b",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "GenerateFlowFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -1192.0,
+        "y" : -1840.0
+      },
+      "properties" : {
+        "File Size" : "0B",
+        "Batch Size" : "1",
+        "Unique FlowFiles" : "false",
+        "Character Set" : "UTF-8",
+        "Data Format" : "Text"
+      },
+      "propertyDescriptors" : {
+        "File Size" : {
+          "displayName" : "File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Size",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Unique FlowFiles" : {
+          "displayName" : "Unique FlowFiles",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Unique FlowFiles",
+          "sensitive" : false
+        },
+        "Mime Type" : {
+          "displayName" : "Mime Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mime Type",
+          "sensitive" : false
+        },
+        "Custom Text" : {
+          "displayName" : "Custom Text",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Text",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        },
+        "Data Format" : {
+          "displayName" : "Data Format",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Data Format",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "525600 min",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.10.0"
+      },
+      "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -712.0,
+        "y" : -1120.0
+      },
+      "properties" : {
+        "Group" : "15051",
+        "Owner" : "15428",
+        "Create Missing Directories" : "true",
+        "Directory" : "/scratch/users/app.nifi/data_destino/${subdir}/",
+        "Conflict Resolution Strategy" : "ignore"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
           "sensitive" : false
         }
       },
@@ -1893,7 +2445,7 @@
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.standard.PutEmail",
+      "type" : "org.apache.nifi.processors.standard.PutFile",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ ],
@@ -1902,7 +2454,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
       "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
       "componentType" : "PROCESSOR",
@@ -1992,149 +2544,74 @@
       "type" : "org.apache.nifi.processors.standard.PutFile",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "output stream", "original", "nonzero status" ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
-      },
-      "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "41ce44d9-3c75-3246-a81c-d93ed6deb6c7",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "ExecuteStreamCommand",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -320.0,
-        "y" : -672.0
-      },
-      "properties" : {
-        "argumentsStrategy" : "Command Arguments Property",
-        "Max Attribute Length" : "256",
-        "Working Directory" : "/scripts/app.nifi/DATA_TRANSFER",
-        "Command Path" : "/bin/bash",
-        "Argument Delimiter" : " ",
-        "Ignore STDIN" : "false",
-        "Command Arguments" : "-c \"su - app.nifi -c '/scripts/app.nifi/DATA_TRANSFER/links_for_data.sh #{absolute.path.origem} #{absolute.path.destino}'\""
-      },
-      "propertyDescriptors" : {
-        "argumentsStrategy" : {
-          "displayName" : "Command Arguments Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "argumentsStrategy",
-          "sensitive" : false
-        },
-        "Max Attribute Length" : {
-          "displayName" : "Max Attribute Length",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Max Attribute Length",
-          "sensitive" : false
-        },
-        "Output MIME Type" : {
-          "displayName" : "Output MIME Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Output MIME Type",
-          "sensitive" : false
-        },
-        "Working Directory" : {
-          "displayName" : "Working Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Working Directory",
-          "sensitive" : false
-        },
-        "Command Path" : {
-          "displayName" : "Command Path",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Command Path",
-          "sensitive" : false
-        },
-        "Output Destination Attribute" : {
-          "displayName" : "Output Destination Attribute",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Output Destination Attribute",
-          "sensitive" : false
-        },
-        "Argument Delimiter" : {
-          "displayName" : "Argument Delimiter",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Argument Delimiter",
-          "sensitive" : false
-        },
-        "Ignore STDIN" : {
-          "displayName" : "Ignore STDIN",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Ignore STDIN",
-          "sensitive" : false
-        },
-        "Command Arguments" : {
-          "displayName" : "Command Arguments",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Command Arguments",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.ExecuteStreamCommand",
-      "yieldDuration" : "1 sec"
-    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-standard-nar",
+        "artifact" : "nifi-update-attribute-nar",
         "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
+        "version" : "2.10.0"
       },
-      "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+      "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
       "componentType" : "PROCESSOR",
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "934698d8-5535-3dbf-8f23-21374b46b8be",
+      "identifier" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "DistributeLoad",
+      "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -312.0,
-        "y" : -1392.0
+        "y" : -1616.0
       },
       "properties" : {
-        "Number of Relationships" : "3",
-        "Distribution Strategy" : "round robin"
+        "subdir" : "${path:substringBeforeLast('/')}",
+        "Store State" : "Do not store state",
+        "origin" : "${absolute.path}",
+        "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
-        "Number of Relationships" : {
-          "displayName" : "Number of Relationships",
-          "dynamic" : false,
+        "subdir" : {
+          "displayName" : "subdir",
+          "dynamic" : true,
           "identifiesControllerService" : false,
-          "name" : "Number of Relationships",
+          "name" : "subdir",
           "sensitive" : false
         },
-        "Distribution Strategy" : {
-          "displayName" : "Distribution Strategy",
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Distribution Strategy",
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "origin" : {
+          "displayName" : "origin",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "origin",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
           "sensitive" : false
         }
       },
@@ -2145,309 +2622,7 @@
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.standard.DistributeLoad",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ "success", "failure" ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "504604f9-b2c2-3204-ae27-81f748c26003",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "PutEmail",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 744.0,
-        "y" : -1144.0
-      },
-      "properties" : {
-        "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
-        "Message" : "=========================================================\nDATA TRANSFER FROM #{data_release} - COMPLETED\n=========================================================\n\n\nSource Dir: \t#{absolute.path.origem}\nFinal Dir: \t\t#{absolute.path.destino}\n\n\nThe data movement report is attached.\n\n=========================================================\n\nEste é um e-mail automático.",
-        "Attach File" : "true",
-        "input-character-set" : "UTF-8",
-        "SMTP Port" : "25",
-        "SMTP Auth" : "false",
-        "From" : "nubia.garcia@linea.org.br",
-        "Include All Attributes In Message" : "false",
-        "SMTP Hostname" : "mx4.linea.org.br",
-        "Subject" : "[IDAC-BR] NiFi | DATA TRANSFER COMPLETED | DATA TRANSFER FROM #{data_release}",
-        "SMTP X-Mailer Header" : "NiFi",
-        "Content Type" : "text/plain",
-        "SMTP Username" : "Anonymous",
-        "To" : "nubia.garcia@linea.org.br",
-        "email-ff-content-as-message" : "false",
-        "authorization-mode" : "password-based-authorization-mode",
-        "SMTP TLS" : "false"
-      },
-      "propertyDescriptors" : {
-        "CC" : {
-          "displayName" : "CC",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "CC",
-          "sensitive" : false
-        },
-        "SMTP Socket Factory" : {
-          "displayName" : "SMTP Socket Factory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Socket Factory",
-          "sensitive" : false
-        },
-        "BCC" : {
-          "displayName" : "BCC",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "BCC",
-          "sensitive" : false
-        },
-        "Message" : {
-          "displayName" : "Message",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Message",
-          "sensitive" : false
-        },
-        "Attach File" : {
-          "displayName" : "Attach File",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Attach File",
-          "sensitive" : false
-        },
-        "attribute-name-regex" : {
-          "displayName" : "Attributes to Send as Headers (Regex)",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "attribute-name-regex",
-          "sensitive" : false
-        },
-        "input-character-set" : {
-          "displayName" : "Input Character Set",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "input-character-set",
-          "sensitive" : false
-        },
-        "SMTP Port" : {
-          "displayName" : "SMTP Port",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Port",
-          "sensitive" : false
-        },
-        "SMTP Auth" : {
-          "displayName" : "SMTP Auth",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Auth",
-          "sensitive" : false
-        },
-        "From" : {
-          "displayName" : "From",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "From",
-          "sensitive" : false
-        },
-        "Include All Attributes In Message" : {
-          "displayName" : "Include All Attributes In Message",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Include All Attributes In Message",
-          "sensitive" : false
-        },
-        "SMTP Hostname" : {
-          "displayName" : "SMTP Hostname",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Hostname",
-          "sensitive" : false
-        },
-        "Subject" : {
-          "displayName" : "Subject",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Subject",
-          "sensitive" : false
-        },
-        "SMTP X-Mailer Header" : {
-          "displayName" : "SMTP X-Mailer Header",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP X-Mailer Header",
-          "sensitive" : false
-        },
-        "oauth2-access-token-provider" : {
-          "displayName" : "OAuth2 Access Token Provider",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "oauth2-access-token-provider",
-          "sensitive" : false
-        },
-        "Content Type" : {
-          "displayName" : "Content Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Content Type",
-          "sensitive" : false
-        },
-        "SMTP Username" : {
-          "displayName" : "SMTP Username",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Username",
-          "sensitive" : false
-        },
-        "To" : {
-          "displayName" : "To",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "To",
-          "sensitive" : false
-        },
-        "SMTP Password" : {
-          "displayName" : "SMTP Password",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP Password",
-          "sensitive" : true
-        },
-        "email-ff-content-as-message" : {
-          "displayName" : "Flow file content as message",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "email-ff-content-as-message",
-          "sensitive" : false
-        },
-        "authorization-mode" : {
-          "displayName" : "Authorization Mode",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "authorization-mode",
-          "sensitive" : false
-        },
-        "SMTP TLS" : {
-          "displayName" : "SMTP STARTTLS",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "SMTP TLS",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.PutEmail",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0-M4"
-      },
-      "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "PutFile",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -712.0,
-        "y" : -1120.0
-      },
-      "properties" : {
-        "Group" : "15051",
-        "Owner" : "15428",
-        "Create Missing Directories" : "true",
-        "Directory" : "/scratch/users/app.nifi/data_destino/${subdir}/",
-        "Conflict Resolution Strategy" : "ignore"
-      },
-      "propertyDescriptors" : {
-        "Group" : {
-          "displayName" : "Group",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Group",
-          "sensitive" : false
-        },
-        "Owner" : {
-          "displayName" : "Owner",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Owner",
-          "sensitive" : false
-        },
-        "Create Missing Directories" : {
-          "displayName" : "Create Missing Directories",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Create Missing Directories",
-          "sensitive" : false
-        },
-        "Permissions" : {
-          "displayName" : "Permissions",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Permissions",
-          "sensitive" : false
-        },
-        "Maximum File Count" : {
-          "displayName" : "Maximum File Count",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Count",
-          "sensitive" : false
-        },
-        "Last Modified Time" : {
-          "displayName" : "Last Modified Time",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Last Modified Time",
-          "sensitive" : false
-        },
-        "Directory" : {
-          "displayName" : "Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Directory",
-          "sensitive" : false
-        },
-        "Conflict Resolution Strategy" : {
-          "displayName" : "Conflict Resolution Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Conflict Resolution Strategy",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
@@ -2457,28 +2632,29 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "data_release" : {
+    "General Parameters" : {
       "componentType" : "PARAMETER_CONTEXT",
+      "description" : "Parâmetro global para modificar a cada data release do LSST e paths",
       "inheritedParameterContexts" : [ ],
-      "name" : "data_release",
+      "name" : "General Parameters",
       "parameters" : [ {
+        "description" : "",
+        "name" : "absolute.path.destino",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "/scratch/users/app.nifi/data_destino"
+      }, {
         "description" : "",
         "name" : "absolute.path.origem",
         "provided" : false,
         "sensitive" : false,
-        "value" : "/scratch/users/app.nifi/data_origem"
+        "value" : "/data/dtn/lsst/download/fake_dp1"
       }, {
         "description" : "",
         "name" : "data_release",
         "provided" : false,
         "sensitive" : false,
         "value" : "DES"
-      }, {
-        "description" : "",
-        "name" : "absolute.path.destino",
-        "provided" : false,
-        "sensitive" : false,
-        "value" : "/scratch/users/app.nifi/data_destino"
       } ]
     }
   },
@@ -2486,6 +2662,6 @@
   "snapshotMetadata" : {
     "author" : "lineaaplnifi",
     "flowIdentifier" : "DataTransferWorflow",
-    "timestamp" : 0
+    "timestamp" : 1786015036390
   }
 }
