@@ -74,57 +74,18 @@
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : 272.0,
-        "y" : -920.0
-      }, {
-        "x" : -376.0,
-        "y" : -920.0
-      } ],
+      "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
+        "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
         "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3d3b76f1-9843-31d2-a056-4f422d0e8d76",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
-      "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "5339124e-a009-3dd6-b9c3-632fcd51e9a7",
-        "name" : "PutFile",
+        "id" : "41ce44d9-3c75-3246-a81c-d93ed6deb6c7",
+        "name" : "ExecuteStreamCommand",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -136.0,
-        "y" : -856.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3f231f56-4926-3554-bc98-e4b3357cb233",
+      "identifier" : "798c939d-ce1c-32b7-a25d-37dae26ddc26",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -133,85 +94,13 @@
       "prioritizers" : [ ],
       "selectedRelationships" : [ "success" ],
       "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "f7d1982b-8e82-3ba8-8173-b6d5f456cc6d",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : 272.0,
-        "y" : -848.0
-      }, {
-        "x" : -136.0,
-        "y" : -848.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "4bb97bb6-b8c1-3c74-96ad-a10fafe45dc2",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "5339124e-a009-3dd6-b9c3-632fcd51e9a7",
-        "name" : "PutFile",
+        "id" : "dd9143bc-019f-1000-854d-a3883cfc5e12",
+        "name" : "GenerateFlowFile",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "10 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : 272.0,
-        "y" : -1328.0
-      }, {
-        "x" : 272.0,
-        "y" : -1184.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "5339124e-a009-3dd6-b9c3-632fcd51e9a7",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "7a59aba0-ae9e-3f7c-9c7b-d5f39b4a8522",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "3" ],
-      "source" : {
-        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-        "groupId" : "flow-contents-group",
-        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-        "name" : "DistributeLoad",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
+      "zIndex" : 30
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -273,194 +162,34 @@
       },
       "zIndex" : 2
     }, {
-      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureDataSizeThreshold" : "0 GB",
       "backPressureObjectThreshold" : 10000,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
-        "groupId" : "flow-contents-group",
-        "id" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
+        "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "id" : "bb9148b9-f4d7-3c3c-af37-addc53c37116",
+        "name" : "Sequencia",
+        "type" : "INPUT_PORT"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "8f442cd4-8c40-35da-b75e-35a3a988657d",
+      "identifier" : "aa351ae1-1724-3681-a4cd-ceb69e3752c6",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
+      "selectedRelationships" : [ "original" ],
       "source" : {
-        "comments" : "Processor responsável por varrer o diretório de origem dos dados.\nPath original: /data/dtn/lsst/download",
-        "groupId" : "flow-contents-group",
-        "id" : "0e09faab-0766-3973-94a0-0320122f5a6d",
-        "name" : "GetFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "10 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -136.0,
-        "y" : -1176.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "f7d1982b-8e82-3ba8-8173-b6d5f456cc6d",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a38cfe9e-6be5-34e5-8485-95e190e3fd4d",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "2" ],
-      "source" : {
-        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-        "groupId" : "flow-contents-group",
-        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-        "name" : "DistributeLoad",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-        "groupId" : "flow-contents-group",
-        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-        "name" : "DistributeLoad",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a5771220-7c8e-302b-825a-61e639b327ce",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
-        "groupId" : "flow-contents-group",
-        "id" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -536.0,
-        "y" : -848.0
-      }, {
-        "x" : -136.0,
-        "y" : -848.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a7a72dfd-cfd2-3c32-ad38-4cfd3b4adc57",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "39f3256c-1043-3f20-a438-5f9571286a5a",
-        "name" : "PutEmail",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ae00b102-dc7b-3327-bcec-5db774e5f3e2",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "100 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "Executa um script que verifica em quais diretórios possuem arquivos presentes, quais as extensões (.parquet ou .fits), quantos arquivos são e o volume em bytes.",
         "groupId" : "flow-contents-group",
-        "id" : "41ce44d9-3c75-3246-a81c-d93ed6deb6c7",
+        "id" : "2f8bcc0b-434a-3501-8cb6-43159506f716",
         "name" : "ExecuteStreamCommand",
         "type" : "PROCESSOR"
       },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "c86e9a10-3605-3011-a85f-ab5218d37eb1",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "zIndex" : 0
+      "zIndex" : 50
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -491,114 +220,6 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 3
-    }, {
-      "backPressureDataSizeThreshold" : "10 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -536.0,
-        "y" : -1328.0
-      }, {
-        "x" : -536.0,
-        "y" : -1200.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "eedd77f1-442f-3ee5-aa89-21f9f953dabb",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ "org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer" ],
-      "selectedRelationships" : [ "1" ],
-      "source" : {
-        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-        "groupId" : "flow-contents-group",
-        "id" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-        "name" : "DistributeLoad",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -536.0,
-        "y" : -920.0
-      }, {
-        "x" : -376.0,
-        "y" : -920.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f36d3ba6-83ad-35c9-a170-9e41e00fad04",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
-      "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ {
-        "x" : -136.0,
-        "y" : -920.0
-      }, {
-        "x" : -376.0,
-        "y" : -920.0
-      } ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f7156126-eec4-3792-bb2c-4fa97fd7ff20",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
-      "source" : {
-        "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-        "groupId" : "flow-contents-group",
-        "id" : "f7d1982b-8e82-3ba8-8173-b6d5f456cc6d",
-        "name" : "PutFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
     } ],
     "controllerServices" : [ {
       "bulletinLevel" : "WARN",
@@ -830,23 +451,7 @@
     "externalControllerServiceReferences" : { },
     "flowFileConcurrency" : "UNBOUNDED",
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
-    "funnels" : [ {
-      "componentType" : "FUNNEL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0bbb24d3-40f4-3d28-83ab-315430433373",
-      "position" : {
-        "x" : -888.0,
-        "y" : -944.0
-      }
-    }, {
-      "componentType" : "FUNNEL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "6825a5f2-e931-333c-b813-ee88401cea8c",
-      "position" : {
-        "x" : -160.0,
-        "y" : -792.0
-      }
-    } ],
+    "funnels" : [ ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
     "labels" : [ ],
@@ -858,137 +463,1328 @@
       "x" : 0.0,
       "y" : 0.0
     },
-    "processGroups" : [ ],
-    "processors" : [ {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.10.0"
-      },
-      "comments" : "Processor responsável por varrer o diretório de origem dos dados.\nPath original: /data/dtn/lsst/download",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
+    "processGroups" : [ {
+      "comments" : "",
+      "componentType" : "PROCESS_GROUP",
+      "connections" : [ {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd99a-019f-1000-542b-2d14117aa961",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "41b48aaa-b261-3a07-9777-2fd9b4cc571c",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "1" ],
+        "source" : {
+          "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+          "name" : "DistributeLoad",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 3
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd999-019f-1000-17a0-5b1517b4217f",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "5121eb7f-98bf-311d-bcb2-c1e0d87a919c",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "2" ],
+        "source" : {
+          "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+          "name" : "DistributeLoad",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 4
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd998-019f-1000-9a0a-8a7d87e861af",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "59d357c0-1908-3be7-bdaa-82a9e406c528",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "4" ],
+        "source" : {
+          "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+          "name" : "DistributeLoad",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 6
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd997-019f-1000-50bc-c993e9511310",
+          "name" : "FetchFile",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "74956f92-93a9-360a-86d1-111bf862b779",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "success" ],
+        "source" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd996-019f-1000-8048-a6068861d907",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 9
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+          "name" : "DistributeLoad",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "75a18437-1501-397f-8199-164fe421ca0c",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "" ],
+        "source" : {
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "bb9148b9-f4d7-3c3c-af37-addc53c37116",
+          "name" : "Sequencia",
+          "type" : "INPUT_PORT"
+        },
+        "zIndex" : 2
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd99b-019f-1000-f454-e237520f7b48",
+          "name" : "FetchFile",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "7b759a3d-374e-3c25-9c5d-8cc2ddbf6a55",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "success" ],
+        "source" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd999-019f-1000-17a0-5b1517b4217f",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 8
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+          "name" : "DistributeLoad",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "870c359a-f869-330d-8dcf-8b826889047b",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "success" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd992-019f-1000-ff9b-1d9a504a5c0a",
+          "name" : "ListFile",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 1
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd996-019f-1000-8048-a6068861d907",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "951015f6-d343-38f4-9bfd-0f59c3252773",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "3" ],
+        "source" : {
+          "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+          "name" : "DistributeLoad",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 5
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd993-019f-1000-b5eb-6a64c9d5b523",
+          "name" : "FetchFile",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "b64252b5-bdf2-306c-a5fa-507423ffe0ce",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "success" ],
+        "source" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd99a-019f-1000-542b-2d14117aa961",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 7
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd994-019f-1000-93e2-05cfcf1e7135",
+          "name" : "FetchFile",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "bed82759-3446-377c-b14d-5a6035c27c01",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "success" ],
+        "source" : {
+          "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+          "groupId" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+          "id" : "ed4fd998-019f-1000-9a0a-8a7d87e861af",
+          "name" : "UpdateAttribute",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 10
+      } ],
+      "controllerServices" : [ ],
+      "defaultBackPressureDataSizeThreshold" : "1 GB",
+      "defaultBackPressureObjectThreshold" : 10000,
+      "defaultFlowFileExpiration" : "0 sec",
+      "executionEngine" : "INHERITED",
+      "flowFileConcurrency" : "UNBOUNDED",
+      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+      "funnels" : [ ],
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0e09faab-0766-3973-94a0-0320122f5a6d",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "GetFile",
-      "penaltyDuration" : "30 sec",
+      "identifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+      "inputPorts" : [ {
+        "allowRemoteAccess" : false,
+        "componentType" : "INPUT_PORT",
+        "concurrentlySchedulableTaskCount" : 1,
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "bb9148b9-f4d7-3c3c-af37-addc53c37116",
+        "name" : "Sequencia",
+        "portFunction" : "STANDARD",
+        "position" : {
+          "x" : -832.0,
+          "y" : -400.0
+        },
+        "scheduledState" : "ENABLED",
+        "type" : "INPUT_PORT"
+      } ],
+      "labels" : [ ],
+      "maxConcurrentTasks" : 1,
+      "name" : "Mov Data",
+      "outputPorts" : [ ],
+      "parameterContextName" : "General Parameters",
       "position" : {
-        "x" : -312.0,
-        "y" : -1856.0
+        "x" : -2016.0,
+        "y" : -2344.0
       },
-      "properties" : {
-        "Keep Source File" : "false",
-        "Minimum File Age" : "0 sec",
-        "Polling Interval" : "0 sec",
-        "Input Directory" : "/data/dtn/lsst/download/fake_dp1",
-        "Batch Size" : "100",
-        "Minimum File Size" : "0 B",
-        "Ignore Hidden Files" : "true",
-        "Recurse Subdirectories" : "true",
-        "File Filter" : "[^\\.].*"
-      },
-      "propertyDescriptors" : {
-        "Keep Source File" : {
-          "displayName" : "Keep Source File",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Keep Source File",
-          "sensitive" : false
+      "processGroups" : [ ],
+      "processors" : [ {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
         },
-        "Minimum File Age" : {
-          "displayName" : "Minimum File Age",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Minimum File Age",
-          "sensitive" : false
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd992-019f-1000-ff9b-1d9a504a5c0a",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "ListFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -195.99991608861455,
+          "y" : -447.1763576459407
         },
-        "Polling Interval" : {
-          "displayName" : "Polling Interval",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Polling Interval",
-          "sensitive" : false
+        "properties" : {
+          "Minimum File Age" : "0 sec",
+          "Entity Tracking Initial Listing Target" : "all",
+          "Track Performance" : "false",
+          "Max Disk Operation Time" : "10 secs",
+          "Max Directory Listing Time" : "3 mins",
+          "Recurse Subdirectories" : "true",
+          "File Filter" : "[^\\.].*",
+          "Include File Attributes" : "true",
+          "Input Directory Location" : "Local",
+          "Target System Timestamp Precision" : "auto-detect",
+          "Input Directory" : "#{absolute.path.origem}",
+          "Entity Tracking Node Identifier" : "${hostname()}",
+          "Minimum File Size" : "0 B",
+          "Ignore Hidden Files" : "true",
+          "Listing Strategy" : "timestamps",
+          "Entity Tracking Time Window" : "3 hours",
+          "Maximum Number of Files to Track" : "100000"
         },
-        "Input Directory" : {
-          "displayName" : "Input Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Input Directory",
-          "sensitive" : false
+        "propertyDescriptors" : {
+          "Minimum File Age" : {
+            "displayName" : "Minimum File Age",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Minimum File Age",
+            "sensitive" : false
+          },
+          "Entity Tracking Initial Listing Target" : {
+            "displayName" : "Entity Tracking Initial Listing Target",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Entity Tracking Initial Listing Target",
+            "sensitive" : false
+          },
+          "Maximum File Age" : {
+            "displayName" : "Maximum File Age",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Maximum File Age",
+            "sensitive" : false
+          },
+          "Track Performance" : {
+            "displayName" : "Track Performance",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Track Performance",
+            "sensitive" : false
+          },
+          "Entity Tracking State Cache" : {
+            "displayName" : "Entity Tracking State Cache",
+            "dynamic" : false,
+            "identifiesControllerService" : true,
+            "name" : "Entity Tracking State Cache",
+            "sensitive" : false
+          },
+          "Maximum File Size" : {
+            "displayName" : "Maximum File Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Maximum File Size",
+            "sensitive" : false
+          },
+          "Max Disk Operation Time" : {
+            "displayName" : "Max Disk Operation Time",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Max Disk Operation Time",
+            "sensitive" : false
+          },
+          "Max Directory Listing Time" : {
+            "displayName" : "Max Directory Listing Time",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Max Directory Listing Time",
+            "sensitive" : false
+          },
+          "Recurse Subdirectories" : {
+            "displayName" : "Recurse Subdirectories",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Recurse Subdirectories",
+            "sensitive" : false
+          },
+          "File Filter" : {
+            "displayName" : "File Filter",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File Filter",
+            "sensitive" : false
+          },
+          "Path Filter" : {
+            "displayName" : "Path Filter",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Path Filter",
+            "sensitive" : false
+          },
+          "Include File Attributes" : {
+            "displayName" : "Include File Attributes",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Include File Attributes",
+            "sensitive" : false
+          },
+          "Input Directory Location" : {
+            "displayName" : "Input Directory Location",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Input Directory Location",
+            "sensitive" : false
+          },
+          "Target System Timestamp Precision" : {
+            "displayName" : "Target System Timestamp Precision",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Target System Timestamp Precision",
+            "sensitive" : false
+          },
+          "Input Directory" : {
+            "displayName" : "Input Directory",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Input Directory",
+            "sensitive" : false
+          },
+          "Entity Tracking Node Identifier" : {
+            "displayName" : "Entity Tracking Node Identifier",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Entity Tracking Node Identifier",
+            "sensitive" : false
+          },
+          "Record Writer" : {
+            "displayName" : "Record Writer",
+            "dynamic" : false,
+            "identifiesControllerService" : true,
+            "name" : "Record Writer",
+            "sensitive" : false
+          },
+          "Minimum File Size" : {
+            "displayName" : "Minimum File Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Minimum File Size",
+            "sensitive" : false
+          },
+          "Ignore Hidden Files" : {
+            "displayName" : "Ignore Hidden Files",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Ignore Hidden Files",
+            "sensitive" : false
+          },
+          "Listing Strategy" : {
+            "displayName" : "Listing Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Listing Strategy",
+            "sensitive" : false
+          },
+          "Entity Tracking Time Window" : {
+            "displayName" : "Entity Tracking Time Window",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Entity Tracking Time Window",
+            "sensitive" : false
+          },
+          "Maximum Number of Files to Track" : {
+            "displayName" : "Maximum Number of Files to Track",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Maximum Number of Files to Track",
+            "sensitive" : false
+          }
         },
-        "Maximum File Age" : {
-          "displayName" : "Maximum File Age",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Age",
-          "sensitive" : false
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "1 min",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.ListFile",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ "failure", "not.found", "permission.denied", "success" ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
         },
-        "Batch Size" : {
-          "displayName" : "Batch Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Batch Size",
-          "sensitive" : false
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd993-019f-1000-b5eb-6a64c9d5b523",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "FetchFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -856.0,
+          "y" : 320.0
         },
-        "Maximum File Size" : {
-          "displayName" : "Maximum File Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Size",
-          "sensitive" : false
+        "properties" : {
+          "Move Conflict Strategy" : "Rename",
+          "Move Destination Directory" : "#{absolute.path.destino}/${subdir}/",
+          "File not Found Log Level" : "ERROR",
+          "Permission Denied Log Level" : "ERROR",
+          "File to Fetch" : "${absolute.path}/${filename}",
+          "Completion Strategy" : "Move File"
         },
-        "Minimum File Size" : {
-          "displayName" : "Minimum File Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Minimum File Size",
-          "sensitive" : false
+        "propertyDescriptors" : {
+          "Move Conflict Strategy" : {
+            "displayName" : "Move Conflict Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Conflict Strategy",
+            "sensitive" : false
+          },
+          "Move Destination Directory" : {
+            "displayName" : "Move Destination Directory",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Destination Directory",
+            "sensitive" : false
+          },
+          "File not Found Log Level" : {
+            "displayName" : "File not Found Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File not Found Log Level",
+            "sensitive" : false
+          },
+          "Permission Denied Log Level" : {
+            "displayName" : "Permission Denied Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Permission Denied Log Level",
+            "sensitive" : false
+          },
+          "File to Fetch" : {
+            "displayName" : "File to Fetch",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File to Fetch",
+            "sensitive" : false
+          },
+          "Completion Strategy" : {
+            "displayName" : "Completion Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Completion Strategy",
+            "sensitive" : false
+          }
         },
-        "Ignore Hidden Files" : {
-          "displayName" : "Ignore Hidden Files",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Ignore Hidden Files",
-          "sensitive" : false
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.FetchFile",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ "failure", "not.found", "permission.denied", "success" ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
         },
-        "Recurse Subdirectories" : {
-          "displayName" : "Recurse Subdirectories",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Recurse Subdirectories",
-          "sensitive" : false
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd994-019f-1000-93e2-05cfcf1e7135",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "FetchFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : 448.0,
+          "y" : 344.0
         },
-        "File Filter" : {
-          "displayName" : "File Filter",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "File Filter",
-          "sensitive" : false
+        "properties" : {
+          "Move Conflict Strategy" : "Rename",
+          "Move Destination Directory" : "#{absolute.path.destino}/${subdir}/",
+          "File not Found Log Level" : "ERROR",
+          "Permission Denied Log Level" : "ERROR",
+          "File to Fetch" : "${absolute.path}/${filename}",
+          "Completion Strategy" : "Move File"
         },
-        "Path Filter" : {
-          "displayName" : "Path Filter",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Path Filter",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
+        "propertyDescriptors" : {
+          "Move Conflict Strategy" : {
+            "displayName" : "Move Conflict Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Conflict Strategy",
+            "sensitive" : false
+          },
+          "Move Destination Directory" : {
+            "displayName" : "Move Destination Directory",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Destination Directory",
+            "sensitive" : false
+          },
+          "File not Found Log Level" : {
+            "displayName" : "File not Found Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File not Found Log Level",
+            "sensitive" : false
+          },
+          "Permission Denied Log Level" : {
+            "displayName" : "Permission Denied Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Permission Denied Log Level",
+            "sensitive" : false
+          },
+          "File to Fetch" : {
+            "displayName" : "File to Fetch",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File to Fetch",
+            "sensitive" : false
+          },
+          "Completion Strategy" : {
+            "displayName" : "Completion Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Completion Strategy",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.FetchFile",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd995-019f-1000-2dad-5570d7fd59ec",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "DistributeLoad",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -192.0,
+          "y" : -224.0
+        },
+        "properties" : {
+          "Number of Relationships" : "4",
+          "Distribution Strategy" : "round robin"
+        },
+        "propertyDescriptors" : {
+          "Number of Relationships" : {
+            "displayName" : "Number of Relationships",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Number of Relationships",
+            "sensitive" : false
+          },
+          "Distribution Strategy" : {
+            "displayName" : "Distribution Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Distribution Strategy",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 25,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.DistributeLoad",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-update-attribute-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd996-019f-1000-8048-a6068861d907",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "UpdateAttribute",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -8.0,
+          "y" : 88.0
+        },
+        "properties" : {
+          "Group" : "15051",
+          "subdir" : "${path:substringBeforeLast('/')}",
+          "Owner" : "15428",
+          "Store State" : "Do not store state",
+          "origin" : "${absolute.path}",
+          "Cache Value Lookup Cache Size" : "100"
+        },
+        "propertyDescriptors" : {
+          "Group" : {
+            "displayName" : "Group",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Group",
+            "sensitive" : false
+          },
+          "subdir" : {
+            "displayName" : "subdir",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "subdir",
+            "sensitive" : false
+          },
+          "Owner" : {
+            "displayName" : "Owner",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Owner",
+            "sensitive" : false
+          },
+          "Delete Attributes Expression" : {
+            "displayName" : "Delete Attributes Expression",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Delete Attributes Expression",
+            "sensitive" : false
+          },
+          "Store State" : {
+            "displayName" : "Store State",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Store State",
+            "sensitive" : false
+          },
+          "origin" : {
+            "displayName" : "origin",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "origin",
+            "sensitive" : false
+          },
+          "Cache Value Lookup Cache Size" : {
+            "displayName" : "Cache Value Lookup Cache Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Cache Value Lookup Cache Size",
+            "sensitive" : false
+          },
+          "Stateful Variables Initial Value" : {
+            "displayName" : "Stateful Variables Initial Value",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Stateful Variables Initial Value",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 25,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ "failure", "not.found", "permission.denied", "success" ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd997-019f-1000-50bc-c993e9511310",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "FetchFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -8.0,
+          "y" : 344.0
+        },
+        "properties" : {
+          "Move Conflict Strategy" : "Rename",
+          "Move Destination Directory" : "#{absolute.path.destino}/${subdir}/",
+          "File not Found Log Level" : "ERROR",
+          "Permission Denied Log Level" : "ERROR",
+          "File to Fetch" : "${absolute.path}/${filename}",
+          "Completion Strategy" : "Move File"
+        },
+        "propertyDescriptors" : {
+          "Move Conflict Strategy" : {
+            "displayName" : "Move Conflict Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Conflict Strategy",
+            "sensitive" : false
+          },
+          "Move Destination Directory" : {
+            "displayName" : "Move Destination Directory",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Destination Directory",
+            "sensitive" : false
+          },
+          "File not Found Log Level" : {
+            "displayName" : "File not Found Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File not Found Log Level",
+            "sensitive" : false
+          },
+          "Permission Denied Log Level" : {
+            "displayName" : "Permission Denied Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Permission Denied Log Level",
+            "sensitive" : false
+          },
+          "File to Fetch" : {
+            "displayName" : "File to Fetch",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File to Fetch",
+            "sensitive" : false
+          },
+          "Completion Strategy" : {
+            "displayName" : "Completion Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Completion Strategy",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.FetchFile",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-update-attribute-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd998-019f-1000-9a0a-8a7d87e861af",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "UpdateAttribute",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : 448.0,
+          "y" : 88.0
+        },
+        "properties" : {
+          "Group" : "15051",
+          "subdir" : "${path:substringBeforeLast('/')}",
+          "Owner" : "15428",
+          "Store State" : "Do not store state",
+          "origin" : "${absolute.path}",
+          "Cache Value Lookup Cache Size" : "100"
+        },
+        "propertyDescriptors" : {
+          "Group" : {
+            "displayName" : "Group",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Group",
+            "sensitive" : false
+          },
+          "subdir" : {
+            "displayName" : "subdir",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "subdir",
+            "sensitive" : false
+          },
+          "Owner" : {
+            "displayName" : "Owner",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Owner",
+            "sensitive" : false
+          },
+          "Delete Attributes Expression" : {
+            "displayName" : "Delete Attributes Expression",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Delete Attributes Expression",
+            "sensitive" : false
+          },
+          "Store State" : {
+            "displayName" : "Store State",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Store State",
+            "sensitive" : false
+          },
+          "origin" : {
+            "displayName" : "origin",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "origin",
+            "sensitive" : false
+          },
+          "Cache Value Lookup Cache Size" : {
+            "displayName" : "Cache Value Lookup Cache Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Cache Value Lookup Cache Size",
+            "sensitive" : false
+          },
+          "Stateful Variables Initial Value" : {
+            "displayName" : "Stateful Variables Initial Value",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Stateful Variables Initial Value",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 25,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-update-attribute-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd999-019f-1000-17a0-5b1517b4217f",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "UpdateAttribute",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -432.0,
+          "y" : 88.0
+        },
+        "properties" : {
+          "Group" : "15051",
+          "subdir" : "${path:substringBeforeLast('/')}",
+          "Owner" : "15428",
+          "Store State" : "Do not store state",
+          "origin" : "${absolute.path}",
+          "Cache Value Lookup Cache Size" : "100"
+        },
+        "propertyDescriptors" : {
+          "Group" : {
+            "displayName" : "Group",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Group",
+            "sensitive" : false
+          },
+          "subdir" : {
+            "displayName" : "subdir",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "subdir",
+            "sensitive" : false
+          },
+          "Owner" : {
+            "displayName" : "Owner",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Owner",
+            "sensitive" : false
+          },
+          "Delete Attributes Expression" : {
+            "displayName" : "Delete Attributes Expression",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Delete Attributes Expression",
+            "sensitive" : false
+          },
+          "Store State" : {
+            "displayName" : "Store State",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Store State",
+            "sensitive" : false
+          },
+          "origin" : {
+            "displayName" : "origin",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "origin",
+            "sensitive" : false
+          },
+          "Cache Value Lookup Cache Size" : {
+            "displayName" : "Cache Value Lookup Cache Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Cache Value Lookup Cache Size",
+            "sensitive" : false
+          },
+          "Stateful Variables Initial Value" : {
+            "displayName" : "Stateful Variables Initial Value",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Stateful Variables Initial Value",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 25,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-update-attribute-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd99a-019f-1000-542b-2d14117aa961",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "UpdateAttribute",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -856.0,
+          "y" : 88.0
+        },
+        "properties" : {
+          "Group" : "15051",
+          "subdir" : "${path:substringBeforeLast('/')}",
+          "Owner" : "15428",
+          "Store State" : "Do not store state",
+          "origin" : "${absolute.path}",
+          "Cache Value Lookup Cache Size" : "100"
+        },
+        "propertyDescriptors" : {
+          "Group" : {
+            "displayName" : "Group",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Group",
+            "sensitive" : false
+          },
+          "subdir" : {
+            "displayName" : "subdir",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "subdir",
+            "sensitive" : false
+          },
+          "Owner" : {
+            "displayName" : "Owner",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "Owner",
+            "sensitive" : false
+          },
+          "Delete Attributes Expression" : {
+            "displayName" : "Delete Attributes Expression",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Delete Attributes Expression",
+            "sensitive" : false
+          },
+          "Store State" : {
+            "displayName" : "Store State",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Store State",
+            "sensitive" : false
+          },
+          "origin" : {
+            "displayName" : "origin",
+            "dynamic" : true,
+            "identifiesControllerService" : false,
+            "name" : "origin",
+            "sensitive" : false
+          },
+          "Cache Value Lookup Cache Size" : {
+            "displayName" : "Cache Value Lookup Cache Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Cache Value Lookup Cache Size",
+            "sensitive" : false
+          },
+          "Stateful Variables Initial Value" : {
+            "displayName" : "Stateful Variables Initial Value",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Stateful Variables Initial Value",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 25,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+        "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ "failure", "not.found", "permission.denied", "success" ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.10.0"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 4,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "067c48f6-e3a6-33c4-87b9-30d7d252628f",
+        "identifier" : "ed4fd99b-019f-1000-f454-e237520f7b48",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "FetchFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -424.0,
+          "y" : 336.0
+        },
+        "properties" : {
+          "Move Conflict Strategy" : "Rename",
+          "Move Destination Directory" : "#{absolute.path.destino}/${subdir}/",
+          "File not Found Log Level" : "ERROR",
+          "Permission Denied Log Level" : "ERROR",
+          "File to Fetch" : "${absolute.path}/${filename}",
+          "Completion Strategy" : "Move File"
+        },
+        "propertyDescriptors" : {
+          "Move Conflict Strategy" : {
+            "displayName" : "Move Conflict Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Conflict Strategy",
+            "sensitive" : false
+          },
+          "Move Destination Directory" : {
+            "displayName" : "Move Destination Directory",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Move Destination Directory",
+            "sensitive" : false
+          },
+          "File not Found Log Level" : {
+            "displayName" : "File not Found Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File not Found Log Level",
+            "sensitive" : false
+          },
+          "Permission Denied Log Level" : {
+            "displayName" : "Permission Denied Log Level",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Permission Denied Log Level",
+            "sensitive" : false
+          },
+          "File to Fetch" : {
+            "displayName" : "File to Fetch",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File to Fetch",
+            "sensitive" : false
+          },
+          "Completion Strategy" : {
+            "displayName" : "Completion Strategy",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Completion Strategy",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.FetchFile",
+        "yieldDuration" : "1 sec"
+      } ],
+      "remoteProcessGroups" : [ ],
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "525600 min",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.GetFile",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ "nonzero status", "original", "output stream" ],
+      "statelessFlowTimeout" : "1 min"
+    } ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "nonzero status", "output stream" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -1006,8 +1802,8 @@
       "name" : "ExecuteStreamCommand",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1192.0,
-        "y" : -1568.0
+        "x" : -2728.0,
+        "y" : -2312.0
       },
       "properties" : {
         "Max Attribute Length" : "256",
@@ -1016,7 +1812,7 @@
         "Command Path" : "/bin/bash",
         "Argument Delimiter" : " ",
         "Ignore STDIN" : "false",
-        "Command Arguments" : "-c \"su - app.nifi -c 'sbatch /scripts/app.nifi/DATA_TRANSFER/submit_scan_data.sh'\""
+        "Command Arguments" : "-c \"su - app.nifi -c 'sbatch /scripts/app.nifi/DATA_TRANSFER/submit_scan_data.sh #{absolute.path.origem}'\""
       },
       "propertyDescriptors" : {
         "Max Attribute Length" : {
@@ -1111,8 +1907,8 @@
       "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1040.0,
-        "y" : -760.0
+        "x" : -1720.0,
+        "y" : -1848.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
@@ -1299,7 +2095,7 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
@@ -1324,8 +2120,8 @@
       "name" : "ExecuteStreamCommand",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -320.0,
-        "y" : -672.0
+        "x" : -1504.0,
+        "y" : -2280.0
       },
       "properties" : {
         "Max Attribute Length" : "256",
@@ -1334,7 +2130,7 @@
         "Command Path" : "/bin/bash",
         "Argument Delimiter" : " ",
         "Ignore STDIN" : "false",
-        "Command Arguments" : "-c \"su - app.nifi -c '/scripts/app.nifi/DATA_TRANSFER/links_for_data.sh #{absolute.path.origem} #{absolute.path.destino}'\""
+        "Command Arguments" : "-c \"su - app.nifi -c 'sbatch /scripts/app.nifi/DATA_TRANSFER/submit_links_data.sh #{absolute.path.origem} #{absolute.path.destino}'\""
       },
       "propertyDescriptors" : {
         "Max Attribute Length" : {
@@ -1429,8 +2225,8 @@
       "name" : "EvaluateJsonPath",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 752.0,
-        "y" : -1384.0
+        "x" : -992.0,
+        "y" : -2128.0
       },
       "properties" : {
         "total_obj" : "$.total_obj",
@@ -1535,7 +2331,7 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
@@ -1560,8 +2356,8 @@
       "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 752.0,
-        "y" : -968.0
+        "x" : -992.0,
+        "y" : -1712.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
@@ -1748,158 +2544,11 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.PutEmail",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.10.0"
-      },
-      "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "5339124e-a009-3dd6-b9c3-632fcd51e9a7",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "PutFile",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 96.0,
-        "y" : -1112.0
-      },
-      "properties" : {
-        "Group" : "15051",
-        "Owner" : "15428",
-        "Create Missing Directories" : "true",
-        "Directory" : "/scratch/users/app.nifi/data_destino/${subdir}/",
-        "Conflict Resolution Strategy" : "ignore"
-      },
-      "propertyDescriptors" : {
-        "Group" : {
-          "displayName" : "Group",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Group",
-          "sensitive" : false
-        },
-        "Owner" : {
-          "displayName" : "Owner",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Owner",
-          "sensitive" : false
-        },
-        "Create Missing Directories" : {
-          "displayName" : "Create Missing Directories",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Create Missing Directories",
-          "sensitive" : false
-        },
-        "Permissions" : {
-          "displayName" : "Permissions",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Permissions",
-          "sensitive" : false
-        },
-        "Maximum File Count" : {
-          "displayName" : "Maximum File Count",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Count",
-          "sensitive" : false
-        },
-        "Last Modified Time" : {
-          "displayName" : "Last Modified Time",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Last Modified Time",
-          "sensitive" : false
-        },
-        "Directory" : {
-          "displayName" : "Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Directory",
-          "sensitive" : false
-        },
-        "Conflict Resolution Strategy" : {
-          "displayName" : "Conflict Resolution Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Conflict Resolution Strategy",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.PutFile",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.10.0"
-      },
-      "comments" : "Faz a distribuição de flowfile para permitir o paralelismo.\nA quantidade pode ser aumentada conforme necessidade.",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "934698d8-5535-3dbf-8f23-21374b46b8be",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "DistributeLoad",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -312.0,
-        "y" : -1392.0
-      },
-      "properties" : {
-        "Number of Relationships" : "3",
-        "Distribution Strategy" : "round robin"
-      },
-      "propertyDescriptors" : {
-        "Number of Relationships" : {
-          "displayName" : "Number of Relationships",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Number of Relationships",
-          "sensitive" : false
-        },
-        "Distribution Strategy" : {
-          "displayName" : "Distribution Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Distribution Strategy",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.DistributeLoad",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ "failure", "not.found", "permission.denied" ],
@@ -1920,8 +2569,8 @@
       "name" : "FetchFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 752.0,
-        "y" : -1608.0
+        "x" : -984.0,
+        "y" : -2344.0
       },
       "properties" : {
         "Move Conflict Strategy" : "Fail",
@@ -1977,7 +2626,7 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
@@ -2002,8 +2651,8 @@
       "name" : "ListFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 752.0,
-        "y" : -1848.0
+        "x" : -984.0,
+        "y" : -2584.0
       },
       "properties" : {
         "Minimum File Age" : "0 sec",
@@ -2183,7 +2832,7 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "1 min",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
@@ -2208,8 +2857,8 @@
       "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 760.0,
-        "y" : -1184.0
+        "x" : -984.0,
+        "y" : -1928.0
       },
       "properties" : {
         "filename" : "data_report.json",
@@ -2256,7 +2905,7 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
@@ -2276,13 +2925,13 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e881050c-a9df-34b9-853c-384f3d12889b",
+      "identifier" : "dd9143bc-019f-1000-854d-a3883cfc5e12",
       "maxBackoffPeriod" : "10 mins",
       "name" : "GenerateFlowFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1192.0,
-        "y" : -1840.0
+        "x" : -1512.0,
+        "y" : -2584.0
       },
       "properties" : {
         "File Size" : "0B",
@@ -2360,81 +3009,74 @@
         "group" : "org.apache.nifi",
         "version" : "2.10.0"
       },
-      "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
+      "comments" : "",
       "componentType" : "PROCESSOR",
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "edca45f8-fb76-367d-b3c7-2205e2a2794a",
+      "identifier" : "e881050c-a9df-34b9-853c-384f3d12889b",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "PutFile",
+      "name" : "GenerateFlowFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -712.0,
-        "y" : -1120.0
+        "x" : -2728.0,
+        "y" : -2584.0
       },
       "properties" : {
-        "Group" : "15051",
-        "Owner" : "15428",
-        "Create Missing Directories" : "true",
-        "Directory" : "/scratch/users/app.nifi/data_destino/${subdir}/",
-        "Conflict Resolution Strategy" : "ignore"
+        "File Size" : "0B",
+        "Batch Size" : "1",
+        "Unique FlowFiles" : "false",
+        "Character Set" : "UTF-8",
+        "Data Format" : "Text"
       },
       "propertyDescriptors" : {
-        "Group" : {
-          "displayName" : "Group",
+        "File Size" : {
+          "displayName" : "File Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Group",
+          "name" : "File Size",
           "sensitive" : false
         },
-        "Owner" : {
-          "displayName" : "Owner",
+        "Batch Size" : {
+          "displayName" : "Batch Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Owner",
+          "name" : "Batch Size",
           "sensitive" : false
         },
-        "Create Missing Directories" : {
-          "displayName" : "Create Missing Directories",
+        "Unique FlowFiles" : {
+          "displayName" : "Unique FlowFiles",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Create Missing Directories",
+          "name" : "Unique FlowFiles",
           "sensitive" : false
         },
-        "Permissions" : {
-          "displayName" : "Permissions",
+        "Mime Type" : {
+          "displayName" : "Mime Type",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Permissions",
+          "name" : "Mime Type",
           "sensitive" : false
         },
-        "Maximum File Count" : {
-          "displayName" : "Maximum File Count",
+        "Custom Text" : {
+          "displayName" : "Custom Text",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Maximum File Count",
+          "name" : "Custom Text",
           "sensitive" : false
         },
-        "Last Modified Time" : {
-          "displayName" : "Last Modified Time",
+        "Character Set" : {
+          "displayName" : "Character Set",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Last Modified Time",
+          "name" : "Character Set",
           "sensitive" : false
         },
-        "Directory" : {
-          "displayName" : "Directory",
+        "Data Format" : {
+          "displayName" : "Data Format",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Directory",
-          "sensitive" : false
-        },
-        "Conflict Resolution Strategy" : {
-          "displayName" : "Conflict Resolution Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Conflict Resolution Strategy",
+          "name" : "Data Format",
           "sensitive" : false
         }
       },
@@ -2442,187 +3084,10 @@
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
+      "schedulingPeriod" : "525600 min",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.standard.PutFile",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.10.0"
-      },
-      "comments" : "Salva o arquivo na pasta /data/cl/lsst/ concatenado com a variável ${lsst_element}.\nDessa forma, caso a variável esteja preenchida com \"dr1\" o arquivo será salvo no diretório /data/cl/lsst/dr1.\nAlém de salvar o arquivo na pasta correspondente a variável também é utilizada para definir a permissão do arquivo no linux na prorpriedade \"GROUP\".",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f7d1982b-8e82-3ba8-8173-b6d5f456cc6d",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "PutFile",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -312.0,
-        "y" : -1120.0
-      },
-      "properties" : {
-        "Group" : "15051",
-        "Owner" : "15428",
-        "Create Missing Directories" : "true",
-        "Directory" : "/scratch/users/app.nifi/data_destino/${subdir}/",
-        "Conflict Resolution Strategy" : "ignore"
-      },
-      "propertyDescriptors" : {
-        "Group" : {
-          "displayName" : "Group",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Group",
-          "sensitive" : false
-        },
-        "Owner" : {
-          "displayName" : "Owner",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Owner",
-          "sensitive" : false
-        },
-        "Create Missing Directories" : {
-          "displayName" : "Create Missing Directories",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Create Missing Directories",
-          "sensitive" : false
-        },
-        "Permissions" : {
-          "displayName" : "Permissions",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Permissions",
-          "sensitive" : false
-        },
-        "Maximum File Count" : {
-          "displayName" : "Maximum File Count",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Maximum File Count",
-          "sensitive" : false
-        },
-        "Last Modified Time" : {
-          "displayName" : "Last Modified Time",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Last Modified Time",
-          "sensitive" : false
-        },
-        "Directory" : {
-          "displayName" : "Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Directory",
-          "sensitive" : false
-        },
-        "Conflict Resolution Strategy" : {
-          "displayName" : "Conflict Resolution Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Conflict Resolution Strategy",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.PutFile",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.10.0"
-      },
-      "comments" : "Variável para definir qual a versão do Data Release.\nDeve ser preenchida em minúsculo. \nExemplos.: \ndp0\ndp1\ndr1",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f92937e2-fef6-3a8d-89a1-1b606646588a",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -312.0,
-        "y" : -1616.0
-      },
-      "properties" : {
-        "subdir" : "${path:substringBeforeLast('/')}",
-        "Store State" : "Do not store state",
-        "origin" : "${absolute.path}",
-        "Cache Value Lookup Cache Size" : "100"
-      },
-      "propertyDescriptors" : {
-        "subdir" : {
-          "displayName" : "subdir",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "subdir",
-          "sensitive" : false
-        },
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "origin" : {
-          "displayName" : "origin",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "origin",
-          "sensitive" : false
-        },
-        "Cache Value Lookup Cache Size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Cache Value Lookup Cache Size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
       "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
@@ -2648,7 +3113,7 @@
         "name" : "absolute.path.origem",
         "provided" : false,
         "sensitive" : false,
-        "value" : "/data/dtn/lsst/download/fake_dp1"
+        "value" : "/data/dtn/test/fake_dp1"
       }, {
         "description" : "",
         "name" : "data_release",
@@ -2662,6 +3127,6 @@
   "snapshotMetadata" : {
     "author" : "lineaaplnifi",
     "flowIdentifier" : "DataTransferWorflow",
-    "timestamp" : 1786015036390
+    "timestamp" : 1786398650781
   }
 }
