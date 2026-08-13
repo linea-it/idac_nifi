@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1786652784233,
+    "description" : "",
+    "identifier" : "Data-Transfer-Workflow",
+    "lastModifiedTimestamp" : 1786652784233,
+    "name" : "Data Transfer Workflow",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
