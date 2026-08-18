@@ -485,7 +485,87 @@
     "funnels" : [ ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
-    "labels" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 24.0,
+      "identifier" : "155e612f-01a0-1000-a43b-48becf7c959e",
+      "label" : "Set Permissions Data",
+      "position" : {
+        "x" : -2080.0,
+        "y" : -2640.0
+      },
+      "style" : {
+        "background-color" : "#0b470a",
+        "font-size" : "12px"
+      },
+      "width" : 152.0,
+      "zIndex" : 2
+    }, {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 24.0,
+      "identifier" : "155f28d7-01a0-1000-7f5e-d8d81b1ccb16",
+      "label" : "Scan Data",
+      "position" : {
+        "x" : -1544.0,
+        "y" : -2632.0
+      },
+      "style" : {
+        "background-color" : "#032c02",
+        "font-size" : "12px"
+      },
+      "width" : 80.0,
+      "zIndex" : 2
+    }, {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 24.0,
+      "identifier" : "15602fbe-01a0-1000-e6ad-b39414f6d711",
+      "label" : "Email Alert",
+      "position" : {
+        "x" : -1024.0,
+        "y" : -2632.0
+      },
+      "style" : {
+        "background-color" : "#0c2741",
+        "font-size" : "12px"
+      },
+      "width" : 80.0,
+      "zIndex" : 1
+    }, {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 24.0,
+      "identifier" : "163f494d-d194-38f9-88db-34f862435eef",
+      "label" : "Moving Data",
+      "position" : {
+        "x" : -2560.0,
+        "y" : -2640.0
+      },
+      "style" : {
+        "background-color" : "#0a7208",
+        "font-size" : "12px"
+      },
+      "width" : 96.0,
+      "zIndex" : 2
+    }, {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 24.0,
+      "identifier" : "98bc15dc-4d8a-3ded-808b-58c4f8fe7ba4",
+      "label" : "Before Moving",
+      "position" : {
+        "x" : -3048.0,
+        "y" : -2640.0
+      },
+      "style" : {
+        "background-color" : "#ffcf66",
+        "font-size" : "12px"
+      },
+      "width" : 104.0,
+      "zIndex" : 1
+    } ],
     "maxConcurrentTasks" : 1,
     "name" : "Data Management",
     "outputPorts" : [ ],
@@ -1428,8 +1508,8 @@
       "name" : "GenerateFlowFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1678.3529052734375,
-        "y" : -2576.0
+        "x" : -1680.0,
+        "y" : -2584.0
       },
       "properties" : {
         "File Size" : "0B",
@@ -1517,8 +1597,8 @@
       "name" : "ExecuteStreamCommand",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1678.3529052734375,
-        "y" : -2304.0
+        "x" : -1680.0,
+        "y" : -2320.0
       },
       "properties" : {
         "Max Attribute Length" : "256",
@@ -1705,7 +1785,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -2184.0,
-        "y" : -2312.0
+        "y" : -2320.0
       },
       "properties" : {
         "Max Attribute Length" : "256",
@@ -2014,7 +2094,7 @@
         "name" : "catalogs",
         "provided" : false,
         "sensitive" : false,
-        "value" : "ss_object"
+        "value" : "ss_source"
       }, {
         "description" : "",
         "name" : "data_release",
@@ -2028,6 +2108,6 @@
   "snapshotMetadata" : {
     "author" : "lineaaplnifi",
     "flowIdentifier" : "Data-Management-Stage",
-    "timestamp" : 1787001092351
+    "timestamp" : 1787065123225
   }
 }
